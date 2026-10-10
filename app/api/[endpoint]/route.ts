@@ -1,6 +1,6 @@
 import { dedicatedCatalog } from "@/lib/site-copy";
 const BACKEND = "https://ruirui-whispers-20261010.pages.dev";
-const METHODS: Record<string, string[]> = { content: ["GET"], chat: ["POST"], admin: ["GET", "POST", "DELETE"], "admin-session": ["GET", "POST", "DELETE"] };
+const METHODS: Record<string, string[]> = { mode: ["GET", "POST"], content: ["GET"], chat: ["POST"], admin: ["GET", "POST", "DELETE"], "admin-session": ["GET", "POST", "DELETE"] };
 export const dynamic = "force-dynamic";
 async function handle(request: Request, context: { params: Promise<{ endpoint: string }> }) {
   const { endpoint } = await context.params;
@@ -11,7 +11,7 @@ async function handle(request: Request, context: { params: Promise<{ endpoint: s
   const target = new URL(`/api/${endpoint}`, BACKEND);
   target.search = requestURL.search;
   const headers = new Headers({ "Accept": "application/json" });
-  const cookie = request.headers.get("Cookie")?.split(";").map(value => value.trim()).find(value => value.startsWith("__Host-ruirui-admin="));
+  const cookie = request.headers.get("Cookie")?.split(";").map(value => value.trim()).filter(value => /^__Host-ruirui-(admin|hidden)=/.test(value)).join("; ");
   if (cookie) headers.set("Cookie", cookie);
   if (request.method !== "GET") {
     headers.set("Origin", BACKEND);

@@ -7,5 +7,12 @@
       "binding": "BOARD",
       "id": "9ea59d0553654352826b0affd96e1d8d"
     }
+  ],
+  "d1_databases": [
+    {
+      "binding": "ACTIVATIONS",
+      "database_name": "ruirui-hidden-activation-20261010",
+      "database_id": "2aecc8a5-140e-4081-a92b-a88bd399924b"
+    }
   ]
 }

@@ -1,5 +1,477 @@
 [
   {
+    "original": "设置",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "关闭设置",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "正常模式",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "隐藏模式",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "换一种语气，页面还是熟悉的样子。",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "激活码",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "输入一次性激活码",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "正在激活…",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "激活隐藏模式",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "每个码只能用一次。激活状态保存在此浏览器，清除 Cookie 后需要新的码。",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "此浏览器已激活，可随时切换两种模式。",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "已激活隐藏模式。",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "激活码无效、已使用或已作废。",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "尝试次数较多，请稍后再试。",
+    "groups": [
+      "首页与聊天",
+      "后台"
+    ],
+    "sources": [
+      "lib/site-copy.ts",
+      "components/AdminPanel.tsx"
+    ]
+  },
+  {
+    "original": "暂时无法切换，请稍后重试。",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "模式已切换。",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "正在管理的模式",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "两套文案和 AI 配置独立保存，切换不会影响另一套。",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "切换后未保存的编辑会被清除，确认切换？",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "隐藏模式激活码",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "批量生成一次性激活码，已使用的码不能再次激活。",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "已生成",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "可使用",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "已使用",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "生成数量",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "批量生成",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "刷新列表",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "处理中…",
+    "groups": [
+      "首页与聊天",
+      "后台"
+    ],
+    "sources": [
+      "lib/site-copy.ts",
+      "components/AISettings.tsx"
+    ]
+  },
+  {
+    "original": "激活码操作失败，请检查后端配置。",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "激活码已生成，请复制或下载保存。",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "新生成的码只显示这一次，刷新后不再显示原码。",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "本批次激活码",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "复制全部",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "下载文本",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "已复制激活码。",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "复制失败，可以下载文本保存。",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "当前批次尚未复制或下载，继续生成会隐藏这批原码。确认继续？",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "作废这个未使用的激活码？",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "激活码已作废。",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "码 ID",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "生成时间",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "状态",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "操作",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "未使用",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "已作废",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "作废",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "还没有激活码。",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "聊天记录",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "文字和图片保存在当前浏览器",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "记录保存失败，刷新可能丢失这段对话。请检查浏览器存储空间。",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "暂时没能读取本机聊天记录，请稍后重试。",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "会删除当前聊天的文字和图片，其他聊天仍保留。",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
     "original": "主人，就差你了",
     "groups": [
       "首页与聊天"
@@ -985,15 +1457,6 @@
     ]
   },
   {
-    "original": "尝试次数较多，请稍后再试。",
-    "groups": [
-      "后台"
-    ],
-    "sources": [
-      "components/AdminPanel.tsx"
-    ]
-  },
-  {
     "original": "操作失败，请稍后再试。",
     "groups": [
       "后台"
@@ -1063,15 +1526,6 @@
     ],
     "sources": [
       "components/AdminPanel.tsx"
-    ]
-  },
-  {
-    "original": "处理中…",
-    "groups": [
-      "后台"
-    ],
-    "sources": [
-      "components/AISettings.tsx"
     ]
   },
   {

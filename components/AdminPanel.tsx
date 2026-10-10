@@ -3,10 +3,12 @@ import { useEffect, useState } from "react";
 import { ArrowLeft, Flower2 } from "lucide-react";
 import { ContentEditor } from "./ContentEditor";
 import { AISettings } from "./AISettings";
+import { ActivationCodes } from "./ActivationCodes";
 import { COPY } from "@/lib/site-copy";
 import { useSiteText } from "./SiteContent";
 export function AdminPanel() {
   const t = useSiteText();
+  const [scope, setScope] = useState("normal");
   const [authenticated, setAuthenticated] = useState(false);
   const [password, setPassword] = useState("");
   const [busy, setBusy] = useState(false);
@@ -37,6 +39,6 @@ export function AdminPanel() {
       {!authenticated ? <form onSubmit={event => { event.preventDefault(); void session(); }}><label htmlFor="admin-password">管理密码</label><input id="admin-password" type="password" autoComplete="current-password" value={password} onChange={event => setPassword(event.target.value)} disabled={busy} required/><button className="primary-button" type="submit" disabled={busy || !password}>{busy ? "登录中…" : "登录"}</button></form> : <div className="authenticated-bar"><span>已登录 · 刷新页面仍可继续管理</span><button className="outline-button" disabled={busy} onClick={() => void session(true)}>退出管理</button></div>}
       <p role="status">{message}</p>
     </section>
-    {authenticated && <><ContentEditor token="session" apiURL="/api/admin"/><AISettings token="session" apiURL="/api/admin"/></>}
+    {authenticated && <><section className="admin-scope"><div className="scope-controls"><label htmlFor="admin-scope">{t(COPY.adminScopeLabel)}</label><select id="admin-scope" value={scope} onChange={event => { if (window.confirm(t(COPY.scopeSwitchAsk))) setScope(event.target.value); }}><option value="normal">{t(COPY.normalMode)}</option><option value="hidden">{t(COPY.hiddenMode)}</option></select></div><p>{t(COPY.adminScopeHint)}</p></section><ContentEditor key={"content-"+scope} token="session" apiURL={"/api/admin?scope="+scope}/><AISettings key={"ai-"+scope} token="session" apiURL={"/api/admin?scope="+scope}/><ActivationCodes/></>}
   </main>;
 }

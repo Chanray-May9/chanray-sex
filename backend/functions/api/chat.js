@@ -1,3 +1,5 @@
+import { scopedEnv } from "./_scope.js";
+import { readMode } from "./_activation.js";
 import { json, ok, readObject } from "./_http.js";
 // AI endpoint: chat with 锐锐酱, or generate a site theme from a description.
 import { askAI, PERSONA } from "./_ai.js";
@@ -22,6 +24,8 @@ const THEME_SYSTEM = `你是网站换装魔法师。用户描述想要的网站�
 所有颜色用hex。保持整体柔和可爱、可读性好。只输出JSON。`;
 
 export async function onRequestPost({ request, env }) {
+  const mode = await readMode(request, env);
+  env = scopedEnv(env, mode?.mode);
   const body = await readObject(request, 2_000_000).catch(() => ({}));
 
   if (body.mode === "theme") {

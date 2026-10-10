@@ -172,7 +172,7 @@ export function ContentEditor({ token, apiURL }: { token: string; apiURL: string
   function preview() {
     sessionStorage.setItem(
       PREVIEW_KEY,
-      JSON.stringify({ createdAt: Date.now(), overrides: draft }),
+      JSON.stringify({ createdAt: Date.now(), overrides: draft, scope: new URL(apiURL, location.origin).searchParams.get("scope") || "normal" }),
     );
     const url = new URL(import.meta.env.BASE_URL + page, window.location.origin);
     const opened = window.open(url.href, "ruirui-content-preview-" + Date.now());

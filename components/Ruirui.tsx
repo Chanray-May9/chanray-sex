@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { ArrowUpRight, Heart, Flower2, ArrowRight, Pause, Play } from "lucide-react";
+import { ModeSettings } from "./ModeSettings";
 import { COPY } from "@/lib/site-copy";
 import { useSiteText } from "./SiteContent";
 const whispers = [COPY.whisper1, COPY.whisper2, COPY.whisper3, COPY.whisper4];
@@ -24,6 +25,7 @@ export function Ruirui() {
         <button className={active === "whispers" ? "active" : ""} onClick={() => go("whispers")}>{t(COPY.navWhispers)}</button>
         <button className={active === "together" ? "active" : ""} onClick={() => go("together")}>{t(COPY.navTogether)}</button>
       </nav>
+      <ModeSettings/>
       <div className="header-note"><span className="tiny-heart">♡</span>{t(COPY.heroNote)}</div>
     </header>
     <main>
