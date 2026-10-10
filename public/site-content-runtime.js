@@ -1,5 +1,5 @@
 // Plain-text content replacement shared by React and legacy HTML pages.
-export const PREVIEW_KEY = "chanray:content-preview:v1";
+export const PREVIEW_KEY = "ruirui:content-preview:v1";
 export const normalizeText = (value) => value.replace(/\s+/g, " ").trim();
 export function translateText(value, overrides) {
   if (typeof value !== "string") return value;

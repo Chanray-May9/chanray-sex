@@ -1,0 +1,6 @@
+import ts from 'typescript';
+import fs from 'node:fs';
+const files=['lib/site-copy.ts','app/layout.tsx','components/Chat.tsx','components/Ruirui.tsx','components/AdminPanel.tsx','components/AISettings.tsx','components/ContentEditor.tsx','components/SiteContent.tsx'];
+const entries=new Map();
+for(const file of files){const source=ts.createSourceFile(file,fs.readFileSync(file,'utf8'),ts.ScriptTarget.Latest,true,ts.ScriptKind.TSX);function walk(node){if(ts.isStringLiteral(node)||ts.isNoSubstitutionTemplateLiteral(node)||ts.isJsxText(node)){const text=node.text.replace(/\s+/g,' ').trim();if(/[\u3400-\u9fff]/.test(text)&&text.length<=6000){const group=file.includes('Admin')||file.includes('Settings')||file.includes('Editor')?'后台':file.includes('layout')?'页面标题与描述':'首页与聊天';const item=entries.get(text)||{original:text,groups:[],sources:[]};if(!item.groups.includes(group))item.groups.push(group);if(!item.sources.includes(file))item.sources.push(file);entries.set(text,item);}}ts.forEachChild(node,walk);}walk(source);}
+const output=JSON.stringify([...entries.values()],null,2)+'\n';fs.writeFileSync('lib/catalog.json',output);fs.writeFileSync('backend/src/content/catalog.json',output);console.log(`Editable copy entries: ${entries.size}`);

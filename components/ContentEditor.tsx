@@ -1,5 +1,6 @@
 "use client";
 import { useMemo, useState } from "react";
+import { useSiteText } from "./SiteContent";
 import { PREVIEW_KEY, normalizeText } from "../public/site-content-runtime.js";
 
 type Entry = { original: string; groups: string[]; sources: string[] };
@@ -10,7 +11,7 @@ type Content = {
   revision: string;
   history: { items: History[]; cursor: string | null };
 };
-const PAGES = [["锐锐独立站", ""], ["后台", "admin"]];
+const PAGES = [["首页", ""], ["聊天", "chat"], ["后台", "admin"]];
 function valid(value: unknown): value is Record<string, string> {
   return Boolean(
     value &&
@@ -28,6 +29,7 @@ function valid(value: unknown): value is Record<string, string> {
   );
 }
 export function ContentEditor({ token, apiURL }: { token: string; apiURL: string }) {
+  const t = useSiteText();
   const [content, setContent] = useState<Content | null>(null);
   const [draft, setDraft] = useState<Record<string, string>>({});
   const [query, setQuery] = useState("");
@@ -74,14 +76,14 @@ export function ContentEditor({ token, apiURL }: { token: string; apiURL: string
         response.status === 409
           ? "线上文案已变化，请导出草稿，再重新读取。"
           : response.status === 401
-            ? "管理令牌无效。"
+            ? "登录已失效，请重新登录。"
             : "文案操作失败，请检查后端配置。",
       );
     return await response.json() as Content;
   }
   async function load(more = false) {
     if (busy || !token.trim()) return;
-    if (!more && dirty && !window.confirm("重新读取会丢弃未发布的修改，确认继续？")) return;
+    if (!more && dirty && !window.confirm(t("重新读取会丢弃未发布的修改，确认继续？"))) return;
     setBusy(true);
     setMessage("读取中…");
     try {
@@ -106,9 +108,9 @@ export function ContentEditor({ token, apiURL }: { token: string; apiURL: string
     if (!content || busy) return;
     if (
       !window.confirm(
-        snapshot
+        t(snapshot
           ? "确认恢复这个历史版本？当前版本会先自动备份。"
-          : "确认发布当前文案？当前线上版本会先自动备份。",
+          : "确认发布当前文案？当前线上版本会先自动备份。"),
       )
     )
       return;
@@ -173,7 +175,7 @@ export function ContentEditor({ token, apiURL }: { token: string; apiURL: string
       JSON.stringify({ createdAt: Date.now(), overrides: draft }),
     );
     const url = new URL(import.meta.env.BASE_URL + page, window.location.origin);
-    const opened = window.open(url.href, "chanray-content-preview-" + Date.now());
+    const opened = window.open(url.href, "ruirui-content-preview-" + Date.now());
     if (!opened) {
       setMessage("浏览器拦截了预览窗口，请允许弹出窗口后重试。");
       return;
@@ -224,7 +226,7 @@ export function ContentEditor({ token, apiURL }: { token: string; apiURL: string
               className="btn-mecha"
               disabled={busy}
               onClick={() => {
-                if (window.confirm("将全部文案恢复为源码默认值？此操作只生成草稿，发布后生效。"))
+                if (window.confirm(t("将全部文案恢复为源码默认值？此操作只生成草稿，发布后生效。")))
                   setDraft({});
               }}
             >

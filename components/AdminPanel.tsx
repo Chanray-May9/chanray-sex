@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { ArrowLeft, Flower2 } from "lucide-react";
 import { ContentEditor } from "./ContentEditor";
 import { AISettings } from "./AISettings";
-import { AdminOverview } from "./AdminOverview";
 import { COPY } from "@/lib/site-copy";
 import { useSiteText } from "./SiteContent";
 export function AdminPanel() {
@@ -38,6 +37,6 @@ export function AdminPanel() {
       {!authenticated ? <form onSubmit={event => { event.preventDefault(); void session(); }}><label htmlFor="admin-password">管理密码</label><input id="admin-password" type="password" autoComplete="current-password" value={password} onChange={event => setPassword(event.target.value)} disabled={busy} required/><button className="primary-button" type="submit" disabled={busy || !password}>{busy ? "登录中…" : "登录"}</button></form> : <div className="authenticated-bar"><span>已登录 · 刷新页面仍可继续管理</span><button className="outline-button" disabled={busy} onClick={() => void session(true)}>退出管理</button></div>}
       <p role="status">{message}</p>
     </section>
-    {authenticated && <><AdminOverview token="session" apiURL="/api/admin"/><ContentEditor token="session" apiURL="/api/admin"/><AISettings token="session" apiURL="/api/admin"/></>}
+    {authenticated && <><ContentEditor token="session" apiURL="/api/admin"/><AISettings token="session" apiURL="/api/admin"/></>}
   </main>;
 }

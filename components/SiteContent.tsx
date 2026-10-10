@@ -35,5 +35,5 @@ export function SiteContentProvider({ children }: { children: React.ReactNode })
     document.addEventListener("visibilitychange", visible);
     return () => { active = false; controller.abort(); translator.stop(); clearInterval(timer); document.removeEventListener("visibilitychange", visible); };
   }, [pathname]);
-  return <ContentContext.Provider value={overrides}>{children}{preview && <aside className="preview-banner" data-cms-exempt><span>文案预览 · 尚未发布</span><button onClick={() => { sessionStorage.removeItem(PREVIEW_KEY); location.reload(); }}>退出预览</button></aside>}</ContentContext.Provider>;
+  return <ContentContext.Provider value={overrides}>{children}{preview && <aside className="preview-banner" data-cms-exempt><span>{translateText("文案预览 · 尚未发布", overrides)}</span><button onClick={() => { sessionStorage.removeItem(PREVIEW_KEY); location.reload(); }}>{translateText("退出预览", overrides)}</button></aside>}</ContentContext.Provider>;
 }

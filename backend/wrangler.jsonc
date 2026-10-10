@@ -1,0 +1,11 @@
+{
+  "name": "ruirui-whispers-20261010",
+  "compatibility_date": "2026-10-10",
+  "pages_build_output_dir": "site",
+  "kv_namespaces": [
+    {
+      "binding": "BOARD",
+      "id": "9ea59d0553654352826b0affd96e1d8d"
+    }
+  ]
+}

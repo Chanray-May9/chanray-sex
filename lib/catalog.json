@@ -1,0 +1,1779 @@
+[
+  {
+    "original": "主人，就差你了",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "门关好。 锐锐不装乖了。",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "主人，今晚想让你分心。 锐锐可没打算乖乖聊天。",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "进来，锐锐想你了",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "发送图片",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "移除图片",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "查看图片",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "关闭图片",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "主人发来的图片",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "主人分享了一张图片，请看看图片并和主人聊聊。",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "正在准备图片…",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "请选择 JPG、PNG 或 WebP 图片，大小不超过 10 MB。",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "这张图片没有打开，请换一张试试。",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "图片暂时没获得回复，请检查 AI Key 和模型是否支持图片。",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "图片已准备好",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "重试发送",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "发送失败",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "打开聊天菜单",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "关闭聊天菜单",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "主人，今天想怎么宠锐锐？",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "返回聊天",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "发消息，也可以分享一张图片…",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "分享了一张图片",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "看看这张图片",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "新的聊天",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "我们的聊天",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "你的专属聊天角落",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "主人，锐锐今天有点坏。你想先逗我，还是等我来撩你？",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "Enter 发送 · Shift + Enter 换行",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "想从哪句开始？",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "锐锐",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "只对主人偏心",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "和锐锐聊天",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "悄悄话",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "小默契",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "你再靠近一点，锐锐就不装乖了",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "主人，",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "别躲，",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "看着我。",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "你越装正经，锐锐越想逗你。 乖是装的，想撩你是真的。",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "过来，撩锐锐",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "听一句悄悄话",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "主人，锐锐在等你。",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "一点点心动",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "轻触，给锐锐一颗心",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "两颗相互靠近的柔软心形",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "我们的时间",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "今天，只聊想聊的。",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "此刻，陪着你",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "聊天",
+    "groups": [
+      "首页与聊天",
+      "后台"
+    ],
+    "sources": [
+      "lib/site-copy.ts",
+      "components/ContentEditor.tsx"
+    ]
+  },
+  {
+    "original": "预设对白 · 点一句，就能听见锐锐",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "这段对话只在当前页面保留",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "主人，锐锐在这里。",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "今天想怎么被陪着？",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "主人",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "锐锐，撩我",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "想听你撩我",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "锐锐，坏一点",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "今天有点想你",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "主人，你这样盯着我，是想让锐锐先来招惹你？",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "再靠近一点。你这样看着锐锐，锐锐可就不装乖了。",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "主人，你越装正经，锐锐越想逗你。今天可没打算乖乖坐着。",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "锐锐也是。刚才还在想，你什么时候会过来。",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "给锐锐的消息",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "主人，想对锐锐说什么？",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "发送消息",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "锐锐正在回复…",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "清空对话",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "清空这段对话？",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "再留一会儿",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "关闭确认窗口",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "清空",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "主人，想说的话，锐锐听着。",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "AI 暂时还没接通，可以先听悄悄话。",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "这次等得有点久，主人可以再试一次。",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "再试一次",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "去后台配置",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "一封小小的心事",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "想对主人说",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "有些话，想只说给你听。",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "再听一句",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "今天不想装乖，只想让你分心。",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "主人，你敢逗我，锐锐就敢撩回去。",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "你看你的，锐锐偏要惹你心痒。",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "明天也想，第一个见到你。",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "想你的锐锐",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "靠近一点点",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "点一下这颗心，锐锐就知道你在。",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "给锐锐一颗心",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "收到。锐锐也想你。",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "再给一颗",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "就在这里，陪你一会儿。",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "今天的氛围",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "樱花粉",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "玫瑰粉",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "奶油粉",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "暂停光影",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "开启光影",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "一点心动，一点偏爱。",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "锐锐 · 想靠近你",
+    "groups": [
+      "首页与聊天",
+      "页面标题与描述"
+    ],
+    "sources": [
+      "lib/site-copy.ts",
+      "app/layout.tsx"
+    ]
+  },
+  {
+    "original": "网站管理",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "回到锐锐",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "留给我们的小角落",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "锐锐的网站管理",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "文案、AI 和聊天设置，都在这里。",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "lib/site-copy.ts"
+    ]
+  },
+  {
+    "original": "主人，锐锐在这里。聊一会儿，听句悄悄话，留一点只属于我们的时间。",
+    "groups": [
+      "页面标题与描述"
+    ],
+    "sources": [
+      "app/layout.tsx"
+    ]
+  },
+  {
+    "original": "输入管理密码登录。",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/AdminPanel.tsx"
+    ]
+  },
+  {
+    "original": "已登录，可以管理网站。",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/AdminPanel.tsx"
+    ]
+  },
+  {
+    "original": "密码不正确。",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/AdminPanel.tsx"
+    ]
+  },
+  {
+    "original": "尝试次数较多，请稍后再试。",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/AdminPanel.tsx"
+    ]
+  },
+  {
+    "original": "操作失败，请稍后再试。",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/AdminPanel.tsx"
+    ]
+  },
+  {
+    "original": "已退出管理。",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/AdminPanel.tsx"
+    ]
+  },
+  {
+    "original": "操作失败。",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/AdminPanel.tsx"
+    ]
+  },
+  {
+    "original": "管理密码",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/AdminPanel.tsx"
+    ]
+  },
+  {
+    "original": "登录中…",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/AdminPanel.tsx"
+    ]
+  },
+  {
+    "original": "登录",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/AdminPanel.tsx"
+    ]
+  },
+  {
+    "original": "已登录 · 刷新页面仍可继续管理",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/AdminPanel.tsx"
+    ]
+  },
+  {
+    "original": "退出管理",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/AdminPanel.tsx"
+    ]
+  },
+  {
+    "original": "处理中…",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/AISettings.tsx"
+    ]
+  },
+  {
+    "original": "保存失败，请检查权限、输入或服务端加密配置。",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/AISettings.tsx"
+    ]
+  },
+  {
+    "original": "无法读取配置，请检查登录状态。",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/AISettings.tsx"
+    ]
+  },
+  {
+    "original": "接口返回无效数据。",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/AISettings.tsx"
+    ]
+  },
+  {
+    "original": "AI 配置已保存。",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/AISettings.tsx"
+    ]
+  },
+  {
+    "original": "AI 配置已读取。",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/AISettings.tsx"
+    ]
+  },
+  {
+    "original": "请求失败。",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/AISettings.tsx"
+    ]
+  },
+  {
+    "original": "AI 提示词与 Key 管理",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/AISettings.tsx"
+    ]
+  },
+  {
+    "original": "读取 AI 配置",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/AISettings.tsx"
+    ]
+  },
+  {
+    "original": "调情角色提示词",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/AISettings.tsx"
+    ]
+  },
+  {
+    "original": "API 地址",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/AISettings.tsx"
+    ]
+  },
+  {
+    "original": "模型名称",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/AISettings.tsx"
+    ]
+  },
+  {
+    "original": "启用 AI 调情互动",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/AISettings.tsx"
+    ]
+  },
+  {
+    "original": "Key 状态：",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/AISettings.tsx"
+    ]
+  },
+  {
+    "original": "已配置",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/AISettings.tsx"
+    ]
+  },
+  {
+    "original": "未配置",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/AISettings.tsx"
+    ]
+  },
+  {
+    "original": "使用后台加密保存的 Key。",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/AISettings.tsx"
+    ]
+  },
+  {
+    "original": "使用服务端环境配置。",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/AISettings.tsx"
+    ]
+  },
+  {
+    "original": "替换 API Key（留空保留现有值）",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/AISettings.tsx"
+    ]
+  },
+  {
+    "original": "后台 Key 管理需要服务端设置 ADMIN_ENCRYPTION_KEY。",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/AISettings.tsx"
+    ]
+  },
+  {
+    "original": "删除后台保存的 Key（回退到服务端环境 Key）",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/AISettings.tsx"
+    ]
+  },
+  {
+    "original": "保存 AI 配置",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/AISettings.tsx"
+    ]
+  },
+  {
+    "original": "首页",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/ContentEditor.tsx"
+    ]
+  },
+  {
+    "original": "后台",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/ContentEditor.tsx"
+    ]
+  },
+  {
+    "original": "手动添加",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/ContentEditor.tsx"
+    ]
+  },
+  {
+    "original": "线上文案已变化，请导出草稿，再重新读取。",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/ContentEditor.tsx"
+    ]
+  },
+  {
+    "original": "登录已失效，请重新登录。",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/ContentEditor.tsx"
+    ]
+  },
+  {
+    "original": "文案操作失败，请检查后端配置。",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/ContentEditor.tsx"
+    ]
+  },
+  {
+    "original": "重新读取会丢弃未发布的修改，确认继续？",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/ContentEditor.tsx"
+    ]
+  },
+  {
+    "original": "读取中…",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/ContentEditor.tsx"
+    ]
+  },
+  {
+    "original": "接口数据无效。",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/ContentEditor.tsx"
+    ]
+  },
+  {
+    "original": "全站文案已读取。",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/ContentEditor.tsx"
+    ]
+  },
+  {
+    "original": "读取失败。",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/ContentEditor.tsx"
+    ]
+  },
+  {
+    "original": "确认恢复这个历史版本？当前版本会先自动备份。",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/ContentEditor.tsx"
+    ]
+  },
+  {
+    "original": "确认发布当前文案？当前线上版本会先自动备份。",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/ContentEditor.tsx"
+    ]
+  },
+  {
+    "original": "保存中…",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/ContentEditor.tsx"
+    ]
+  },
+  {
+    "original": "历史版本已恢复。",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/ContentEditor.tsx"
+    ]
+  },
+  {
+    "original": "文案已发布。KV 传播可能需要稍等片刻。",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/ContentEditor.tsx"
+    ]
+  },
+  {
+    "original": "保存失败。",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/ContentEditor.tsx"
+    ]
+  },
+  {
+    "original": "备份文件不能超过 256KB。",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/ContentEditor.tsx"
+    ]
+  },
+  {
+    "original": "备份格式无效。",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/ContentEditor.tsx"
+    ]
+  },
+  {
+    "original": "备份已导入为草稿，尚未发布。",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/ContentEditor.tsx"
+    ]
+  },
+  {
+    "original": "导入失败。",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/ContentEditor.tsx"
+    ]
+  },
+  {
+    "original": "浏览器拦截了预览窗口，请允许弹出窗口后重试。",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/ContentEditor.tsx"
+    ]
+  },
+  {
+    "original": "已打开预览。预览不会发布文案，也不会传递管理令牌。",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/ContentEditor.tsx"
+    ]
+  },
+  {
+    "original": "全站文字管理",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/ContentEditor.tsx"
+    ]
+  },
+  {
+    "original": "编辑标题、正文、导航、按钮、提示、图片说明与页面描述。相同原文默认全站一起替换。留空可以隐藏文字，不会删除对应功能。",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/ContentEditor.tsx"
+    ]
+  },
+  {
+    "original": "读取全站文案",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/ContentEditor.tsx"
+    ]
+  },
+  {
+    "original": "发布修改",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/ContentEditor.tsx"
+    ]
+  },
+  {
+    "original": "导出草稿 / 备份",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/ContentEditor.tsx"
+    ]
+  },
+  {
+    "original": "导入备份",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/ContentEditor.tsx"
+    ]
+  },
+  {
+    "original": "将全部文案恢复为源码默认值？此操作只生成草稿，发布后生效。",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/ContentEditor.tsx"
+    ]
+  },
+  {
+    "original": "全部恢复默认",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/ContentEditor.tsx"
+    ]
+  },
+  {
+    "original": "预览页面",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/ContentEditor.tsx"
+    ]
+  },
+  {
+    "original": "打开草稿预览",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/ContentEditor.tsx"
+    ]
+  },
+  {
+    "original": "搜索原文或新文案",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/ContentEditor.tsx"
+    ]
+  },
+  {
+    "original": "分类",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/ContentEditor.tsx"
+    ]
+  },
+  {
+    "original": "全站",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/ContentEditor.tsx"
+    ]
+  },
+  {
+    "original": "可编辑条目：",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/ContentEditor.tsx"
+    ]
+  },
+  {
+    "original": "；匹配：",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/ContentEditor.tsx"
+    ]
+  },
+  {
+    "original": "；已替换：",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/ContentEditor.tsx"
+    ]
+  },
+  {
+    "original": "有未发布修改。",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/ContentEditor.tsx"
+    ]
+  },
+  {
+    "original": "当前草稿与线上一致。",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/ContentEditor.tsx"
+    ]
+  },
+  {
+    "original": "恢复此项默认",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/ContentEditor.tsx"
+    ]
+  },
+  {
+    "original": "显示更多条目",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/ContentEditor.tsx"
+    ]
+  },
+  {
+    "original": "添加未收录的文字",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/ContentEditor.tsx"
+    ]
+  },
+  {
+    "original": "复制页面上的原文，填入替换文字。适用于新内容和动态提示。只替换文本，不执行 HTML 或脚本。",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/ContentEditor.tsx"
+    ]
+  },
+  {
+    "original": "原文",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/ContentEditor.tsx"
+    ]
+  },
+  {
+    "original": "替换文字",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/ContentEditor.tsx"
+    ]
+  },
+  {
+    "original": "文字已加入草稿。",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/ContentEditor.tsx"
+    ]
+  },
+  {
+    "original": "加入草稿",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/ContentEditor.tsx"
+    ]
+  },
+  {
+    "original": "历史版本与恢复",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/ContentEditor.tsx"
+    ]
+  },
+  {
+    "original": "每次发布前自动备份完整文案。恢复历史版本前也会备份当前版本。",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/ContentEditor.tsx"
+    ]
+  },
+  {
+    "original": "项替换",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/ContentEditor.tsx"
+    ]
+  },
+  {
+    "original": "恢复该版本",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/ContentEditor.tsx"
+    ]
+  },
+  {
+    "original": "读取更多历史",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/ContentEditor.tsx"
+    ]
+  },
+  {
+    "original": "暂无历史版本。",
+    "groups": [
+      "后台"
+    ],
+    "sources": [
+      "components/ContentEditor.tsx"
+    ]
+  },
+  {
+    "original": "文案预览 · 尚未发布",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "components/SiteContent.tsx"
+    ]
+  },
+  {
+    "original": "退出预览",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "components/SiteContent.tsx"
+    ]
+  }
+]
