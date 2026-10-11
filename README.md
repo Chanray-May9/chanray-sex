@@ -29,7 +29,7 @@ npm run build
 
 ## 发布与回退
 
-前端为 React + Vite 静态站，发布地址：https://chanray-may9.github.io/Ruirui-whispers-20261010/ 。推送 main 后 GitHub Actions 自动执行 npm ci、类型检查、测试、构建和 Pages 发布，产物为 dist/client。首页、chat、admin 均生成独立 index.html，可直接访问和刷新。后端继续使用独立 Cloudflare Pages Functions、BOARD KV 和 ACTIVATIONS D1，不依赖 OpenAI Sites。
+前端为 React + Vite 静态站，发布地址：https://chanray-may9.github.io/chanray-sex/ 。推送 main 后 GitHub Actions 自动执行 npm ci、类型检查、测试、构建和 Pages 发布，产物为 dist/client。首页、chat、admin 均生成独立 index.html，可直接访问和刷新。后端继续使用独立 Cloudflare Pages Functions、BOARD KV 和 ACTIVATIONS D1，不依赖 OpenAI Sites。
 
 GitHub Pages 不运行服务端代理，因此使用 CORS + 签名会话请求头，不依赖第三方 Cookie。后端只对允许的 GitHub Origin 将会话请求头转换为受签名校验的 Cookie；密码和真实 API Key 不写入前端。前端会话 Cookie 由 JavaScript 管理（不能标为 HttpOnly），使用 Secure、SameSite=Strict 和项目路径。管理员退出会在服务端撤销会话。旧域名的本机聊天记录和激活 Cookie 因浏览器域名隔离不会自动迁入新域名，后台数据保留原 KV/D1。
 
