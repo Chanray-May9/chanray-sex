@@ -1,7 +1,8 @@
+import { apiFetch } from "../lib/api";
 "use client";
 import { createContext, useCallback, useContext, useEffect, useState } from "react";
 import { ModeContext, type SiteMode } from "./SiteMode";
-import { usePathname } from "next/navigation";
+
 import { createContentTranslator, PREVIEW_KEY, readPreview, translateText } from "../public/site-content-runtime.js";
 const ContentContext = createContext<Record<string, string>>({});
 export function useSiteText() {
@@ -9,7 +10,7 @@ export function useSiteText() {
   return useCallback(<T,>(value: T): T => translateText(value, overrides), [overrides]);
 }
 export function SiteContentProvider({ children }: { children: React.ReactNode }) {
-  const pathname = usePathname();
+  const pathname = location.pathname;
   const [overrides, setOverrides] = useState<Record<string, string>>({});
   const [preview, setPreview] = useState(false);
   const [mode, setMode] = useState<SiteMode>("normal");
@@ -27,11 +28,11 @@ export function SiteContentProvider({ children }: { children: React.ReactNode })
       translator.update(values);
     };
     setPreview(Boolean(draft));
-    const loadMode = async () => { try { const response = await fetch("/api/mode", { cache: "no-store", signal: AbortSignal.any([controller.signal, AbortSignal.timeout(8000)]) }); const data = await response.json() as { mode?: SiteMode; activated?: boolean }; if (active && response.ok) { setMode(data.mode === "hidden" ? "hidden" : "normal"); setActivated(Boolean(data.activated)); } } catch {} };
+    const loadMode = async () => { try { const response = await apiFetch("/api/mode", { cache: "no-store", signal: AbortSignal.any([controller.signal, AbortSignal.timeout(8000)]) }); const data = await response.json() as { mode?: SiteMode; activated?: boolean }; if (active && response.ok) { setMode(data.mode === "hidden" ? "hidden" : "normal"); setActivated(Boolean(data.activated)); } } catch {} };
     void loadMode();
     async function load() {
       try {
-        const response = await fetch("/api/content", { cache: "no-store", signal: AbortSignal.any([controller.signal, AbortSignal.timeout(8000)]) });
+        const response = await apiFetch("/api/content", { cache: "no-store", signal: AbortSignal.any([controller.signal, AbortSignal.timeout(8000)]) });
         const data = await response.json() as { overrides?: Record<string, string> };
         if (response.ok && data.overrides && !Array.isArray(data.overrides) && Object.values(data.overrides).every(value => typeof value === "string")) apply(data.overrides);
       } catch { /* Source copy remains available when content service is unavailable. */ }

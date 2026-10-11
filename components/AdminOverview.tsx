@@ -1,3 +1,4 @@
+import { apiFetch } from "../lib/api";
 "use client";
 import { useState } from "react";
 type Overview = {
@@ -17,7 +18,7 @@ export function AdminOverview({ token, apiURL }: { token: string; apiURL: string
     try {
       const url = new URL(apiURL, location.origin);
       url.searchParams.set("dataset", "overview");
-      const r = await fetch(url, {
+      const r = await apiFetch(url, {
         credentials: "same-origin",
         signal: AbortSignal.timeout(15000),
       });

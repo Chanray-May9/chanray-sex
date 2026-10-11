@@ -1,3 +1,4 @@
+import { apiFetch } from "../lib/api";
 "use client";
 import { useMemo, useState } from "react";
 import { useSiteText } from "./SiteContent";
@@ -65,7 +66,7 @@ export function ContentEditor({ token, apiURL }: { token: string; apiURL: string
     const url = new URL(apiURL, window.location.origin);
     url.searchParams.set("dataset", "content");
     if (nextCursor) url.searchParams.set("cursor", nextCursor);
-    const response = await fetch(url, {
+    const response = await apiFetch(url, {
       method: body ? "POST" : "GET",
       headers: { "Content-Type": "application/json" },
       ...(body ? { body: JSON.stringify(body) } : {}),

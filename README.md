@@ -1,6 +1,6 @@
 # 锐锐独立站
 
-浅粉色首页；点击聊天入口进入 `/chat` 全屏聊天。支持文字、图片选择与压缩、预览、放大、发送失败重试。`/admin` 使用密码登录和独立 HttpOnly Cookie。
+浅粉色首页；点击聊天入口进入 `/chat` 全屏聊天。支持文字、图片选择与压缩、预览、放大、发送失败重试。`/admin` 使用密码登录和本站路径下的签名会话 Cookie。
 
 ## 运行
 
@@ -19,7 +19,7 @@ npm run build
 
 ## 独立服务
 
-`backend/` 是此站专用 Cloudflare Pages Functions。独立项目 `ruirui-whispers-20261010`，独立 BOARD KV、会话签名密钥与 Key 加密密钥。前端 `/api/*` 通过服务端转发至该站自己的后端。未连接 Chanray 的数据存储或 AI 配置。
+`backend/` 是此站专用 Cloudflare Pages Functions。独立项目 `ruirui-whispers-20261010`，独立 BOARD KV、会话签名密钥与 Key 加密密钥。前端直接跨域请求该站自己的 Cloudflare 后端，CORS 仅允许 `https://chanray-may9.github.io`。未连接 Chanray 的数据存储或 AI 配置。
 
 需要在后端设置 `ADMIN_PASSWORD`、`ADMIN_TOKEN`、`ADMIN_ENCRYPTION_KEY`。后台 API Key 以 AES-GCM 加密存入独立 KV，查询不会返回原 Key。源代码不包含实际密码或密钥。默认 API 为 `https://api.deepseek.com/chat/completions`，模型为 `deepseek-flash`，可在后台单独修改。真实 AI 需要用户配置有效 Key；不会自动调用付费模型。
 
@@ -29,12 +29,14 @@ npm run build
 
 ## 发布与回退
 
-前端通过 Sites 维护 `.openai/hosting.json` 中的站点身份并发布 Vinext Worker。后端使用 `backend/wrangler.jsonc` 部署 Pages Functions。因为 Vinext 会生成父目录 Wrangler 配置，建议将 backend 的 functions、src、public、site、wrangler.jsonc 复制到独立工作目录，从该目录执行固定版本 Wrangler Pages 部署，避免使用父目录 Worker 配置。
+前端为 React + Vite 静态站，发布地址：https://chanray-may9.github.io/Ruirui-whispers-20261010/ 。推送 main 后 GitHub Actions 自动执行 npm ci、类型检查、测试、构建和 Pages 发布，产物为 dist/client。首页、chat、admin 均生成独立 index.html，可直接访问和刷新。后端继续使用独立 Cloudflare Pages Functions、BOARD KV 和 ACTIVATIONS D1，不依赖 OpenAI Sites。
 
-每轮修改前保存源码或 Git bundle。前端在 Sites 选择已保存版本回退；后端在 Cloudflare Pages 切换部署；文案恢复使用后台历史记录。修改 Key 前自行保留原 Key，后台不会导出密钥。
+GitHub Pages 不运行服务端代理，因此使用 CORS + 签名会话请求头，不依赖第三方 Cookie。后端只对允许的 GitHub Origin 将会话请求头转换为受签名校验的 Cookie；密码和真实 API Key 不写入前端。前端会话 Cookie 由 JavaScript 管理（不能标为 HttpOnly），使用 Secure、SameSite=Strict 和项目路径。管理员退出会在服务端撤销会话。旧域名的本机聊天记录和激活 Cookie 因浏览器域名隔离不会自动迁入新域名，后台数据保留原 KV/D1。
+
+后端部署：将 backend/functions、src、public、site、wrangler.jsonc 复制到独立目录后运行固定版本 Wrangler：node ../ruirui/node_modules/wrangler/bin/wrangler.js pages deploy site --project-name ruirui-whispers-20261010 --branch main。每轮修改前保存 Git bundle。前端回退使用 Git revert 后推送，后端通过 Cloudflare Pages 选择已有部署；文案使用后台历史恢复。
 
 ## 隐藏模式与激活码
 
 前端设置可输入一次性激活码。正常与隐藏模式共用相同页面结构和组件，文案、历史备份及 AI 配置分别存储（隐藏模式使用独立 KV 命名空间）。未激活浏览器请求不能通过 URL 查询参数读取隐藏文案。后台可选择正在管理的模式，编辑、预览和发布各自的文案。
 
-激活码由后台批量生成，每批 1–100 个。使用 96 位随机值，D1 仅保存 SHA-256 哈希及状态；原码只在生成时返回，务必复制或下载。后台支持查看使用状态并作废未使用的码。D1 的条件 UPDATE ... RETURNING 原子核销，防止并发重复使用。专用 ACTIVATIONS D1 绑定见 backend/wrangler.jsonc，首次部署需执行 backend/schema.sql。激活状态保存在签名的 HttpOnly Secure Cookie，最长一年。此浏览器可以随时切回正常模式，再进入隐藏模式；清除 Cookie 后原激活码不可重复使用，需要新码。
+激活码由后台批量生成，每批 1–100 个。使用 96 位随机值，D1 仅保存 SHA-256 哈希及状态；原码只在生成时返回，务必复制或下载。后台支持查看使用状态并作废未使用的码。D1 的条件 UPDATE ... RETURNING 原子核销，防止并发重复使用。专用 ACTIVATIONS D1 绑定见 backend/wrangler.jsonc，首次部署需执行 backend/schema.sql。GitHub Pages 激活状态保存在本站路径下的签名 Secure Cookie，最长一年。此浏览器可以随时切回正常模式，再进入隐藏模式；清除 Cookie 后原激活码不可重复使用，需要新码。

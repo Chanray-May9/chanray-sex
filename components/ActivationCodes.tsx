@@ -1,3 +1,4 @@
+import { apiFetch } from "../lib/api";
 "use client";
 import { useEffect, useState } from "react";
 import { KeyRound, Copy, Download, Plus, RefreshCw } from "lucide-react";
@@ -6,7 +7,7 @@ import { useSiteText } from "./SiteContent";
 type CodeRecord={id:string;batchId:string;createdAt:number;usedAt:number|null;revokedAt:number|null};
 export function ActivationCodes(){
  const t=useSiteText();const[count,setCount]=useState(10),[records,setRecords]=useState<CodeRecord[]>([]),[generated,setGenerated]=useState<{id:string;code:string}[]>([]),[counts,setCounts]=useState({total:0,used:0,available:0}),[busy,setBusy]=useState(false),[notice,setNotice]=useState(""),[preserved,setPreserved]=useState(false);
- async function request(body?:object){const response=await fetch("/api/admin?dataset=activation",{method:body?"POST":"GET",headers:{"Content-Type":"application/json"},...(body?{body:JSON.stringify(body)}:{}),signal:AbortSignal.timeout(20000)});const data=await response.json() as {records?:CodeRecord[];counts?:typeof counts;codes?:typeof generated};if(!response.ok)throw new Error(t(COPY.codesError));return data;}
+ async function request(body?:object){const response=await apiFetch("/api/admin?dataset=activation",{method:body?"POST":"GET",headers:{"Content-Type":"application/json"},...(body?{body:JSON.stringify(body)}:{}),signal:AbortSignal.timeout(20000)});const data=await response.json() as {records?:CodeRecord[];counts?:typeof counts;codes?:typeof generated};if(!response.ok)throw new Error(t(COPY.codesError));return data;}
  async function refresh(){const data=await request();setRecords(data.records||[]);setCounts(data.counts||{total:0,used:0,available:0});}
  useEffect(()=>{let active=true;request().then(data=>{if(active){setRecords(data.records||[]);setCounts(data.counts||{total:0,used:0,available:0});}}).catch(()=>{if(active)setNotice(t(COPY.codesError));});return()=>{active=false;};},[]);
  async function generate(){if(busy)return;if(generated.length&&!preserved&&!window.confirm(t(COPY.codeBatchDiscard)))return;setBusy(true);setNotice("");try{const data=await request({action:"generate",count});if(!data.codes)throw new Error();setGenerated(data.codes);setPreserved(false);await refresh();setNotice(t(COPY.codesGenerated));}catch{setNotice(t(COPY.codesError));}finally{setBusy(false);}}

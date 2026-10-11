@@ -1,3 +1,4 @@
+import { apiFetch } from "../lib/api";
 "use client";
 import { useState } from "react";
 
@@ -25,7 +26,7 @@ export function AISettings({ token, apiURL }: { token: string; apiURL: string })
       url.searchParams.set("dataset", "ai");
       const headers = { "Content-Type": "application/json" };
       if (save && config) {
-        const response = await fetch(url, {
+        const response = await apiFetch(url, {
           method: "POST",
           headers,
           body: JSON.stringify({
@@ -40,7 +41,7 @@ export function AISettings({ token, apiURL }: { token: string; apiURL: string })
         });
         if (!response.ok) throw new Error("保存失败，请检查权限、输入或服务端加密配置。");
       }
-      const response = await fetch(url, { headers, signal: AbortSignal.timeout(15_000) });
+      const response = await apiFetch(url, { headers, signal: AbortSignal.timeout(15_000) });
       if (!response.ok) throw new Error("无法读取配置，请检查登录状态。");
       const body = await response.json() as Config;
       if (typeof body.prompt !== "string" || typeof body.model !== "string")

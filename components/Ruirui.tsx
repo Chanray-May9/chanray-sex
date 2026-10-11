@@ -1,3 +1,4 @@
+import { sitePath } from "../lib/navigation";
 "use client";
 import { useEffect, useState } from "react";
 import { ArrowUpRight, Heart, Flower2, ArrowRight, Pause, Play } from "lucide-react";
@@ -16,10 +17,10 @@ export function Ruirui() {
     try { const saved = localStorage.getItem("ruirui:mood"); if (saved && ["peach", "rose", "cream"].includes(saved)) setMood(saved); } catch {}
   }, []);
   function changeMood(value: string) { setMood(value); try { localStorage.setItem("ruirui:mood", value); } catch {} }
-  function go(section: string) { if (section === "chat") { window.location.assign("/chat"); return; } setActive(section); document.getElementById(section)?.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" }); }
+  function go(section: string) { if (section === "chat") { window.location.assign(sitePath("/chat")); return; } setActive(section); document.getElementById(section)?.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" }); }
   return <div className={`ruirui-site mood-${mood} ${paused ? "motion-paused" : ""}`}>
     <header className="rui-header">
-      <a className="wordmark" href="/" aria-label={t(COPY.footerNote)}><span className="brand-flower"><Flower2 size={26} strokeWidth={1.4}/></span><span>{t(COPY.brand)}<small>{t(COPY.subtitle)}</small></span></a>
+      <a className="wordmark" href={sitePath("/")} aria-label={t(COPY.footerNote)}><span className="brand-flower"><Flower2 size={26} strokeWidth={1.4}/></span><span>{t(COPY.brand)}<small>{t(COPY.subtitle)}</small></span></a>
       <nav className="rui-nav" aria-label={t(COPY.sessionTitle)}>
         <button className={active === "chat" ? "active" : ""} onClick={() => go("chat")}>{t(COPY.navChat)}</button>
         <button className={active === "whispers" ? "active" : ""} onClick={() => go("whispers")}>{t(COPY.navWhispers)}</button>
@@ -43,7 +44,7 @@ export function Ruirui() {
             <span className="art-caption">{t(COPY.orbitNote)}</span>
           </div>
         </div>
-        <section className="home-chat-invitation" aria-labelledby="invite-title"><div className="invite-heart"><Heart size={64} strokeWidth={1}/></div><p className="hero-eyebrow">{t(COPY.chatInvitationLabel)}</p><h2 id="invite-title">{t(COPY.chatInvitationTitle)}</h2><p>{t(COPY.chatInvitationDescription)}</p><a className="primary-button" href="/chat">{t(COPY.navChat)}<ArrowUpRight size={18}/></a><span className="invite-detail">{t(COPY.chatInvitationDetail)}</span></section>
+        <section className="home-chat-invitation" aria-labelledby="invite-title"><div className="invite-heart"><Heart size={64} strokeWidth={1}/></div><p className="hero-eyebrow">{t(COPY.chatInvitationLabel)}</p><h2 id="invite-title">{t(COPY.chatInvitationTitle)}</h2><p>{t(COPY.chatInvitationDescription)}</p><a className="primary-button" href={sitePath("/chat")}>{t(COPY.navChat)}<ArrowUpRight size={18}/></a><span className="invite-detail">{t(COPY.chatInvitationDetail)}</span></section>
       </section>
       <section className="small-moments" aria-label={t(COPY.heroSecondary)}>
         <article className="whisper-card" id="whispers"><div className="section-eyebrow"><Flower2 size={18}/>{t(COPY.whisperLabel)}</div><h2>{t(COPY.whisperTitle)}</h2><p className="whisper-intro">{t(COPY.whisperIntro)}</p><div className="handwritten-message" key={whisper}><span className="quotation">“</span><p>{t(whispers[whisper])}</p><span className="letter-signature">— {t(COPY.whisperSignature)} ♡</span></div><button className="outline-button" onClick={() => setWhisper(value => (value + 1) % whispers.length)}>{t(COPY.nextWhisper)}<ArrowRight size={16}/></button><span className="letter-scribble" aria-hidden>♡</span></article>
@@ -51,6 +52,6 @@ export function Ruirui() {
       </section>
       <div className="mood-controls"><div><span>{t(COPY.moodLabel)}</span><div className="mood-options">{[["peach", COPY.moodPeach], ["rose", COPY.moodRose], ["cream", COPY.moodCream]].map(([value, label]) => <button className={`mood-choice mood-dot-${value}`} key={value} aria-label={t(label)} aria-pressed={mood === value} onClick={() => changeMood(value)}><i/>{t(label)}</button>)}</div></div><button className="motion-control" onClick={() => setPaused(value => !value)}>{paused ? <Play size={12}/> : <Pause size={12}/>}<span>{t(paused ? COPY.motionOff : COPY.motionOn)}</span></button></div>
     </main>
-    <footer className="rui-footer"><p><Flower2 size={15}/>{t(COPY.footer)}</p><span>{t(COPY.copyright)}</span><a href="/admin/">{t(COPY.admin)}<ArrowUpRight size={12}/></a></footer>
+    <footer className="rui-footer"><p><Flower2 size={15}/>{t(COPY.footer)}</p><span>{t(COPY.copyright)}</span><a href={sitePath("/admin/")}>{t(COPY.admin)}<ArrowUpRight size={12}/></a></footer>
   </div>;
 }

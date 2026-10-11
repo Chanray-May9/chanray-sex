@@ -1,3 +1,5 @@
+import { sitePath } from "../lib/navigation";
+import { apiFetch } from "../lib/api";
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { ArrowUp, ArrowUpRight, Heart, MessageCircle, Flower2, Sparkles, Pause, Play, RotateCcw, X, ImagePlus, Menu, ChevronRight, Plus, Check, LoaderCircle } from "lucide-react";
@@ -100,7 +102,7 @@ export function Chat() {
     setBusy(true); setMode("ai"); setError("");
     const controller = new AbortController(); abort.current = controller; const timeout = setTimeout(() => controller.abort(), 20000);
     try {
-      const response = await fetch("/api/chat", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ mode: "flirt", messages: payload }), signal: controller.signal });
+      const response = await apiFetch("/api/chat", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ mode: "flirt", messages: payload }), signal: controller.signal });
       const body = await response.json() as { reply?: unknown };
       if (!response.ok || typeof body.reply !== "string" || !body.reply.trim()) throw new Error(t(user.image ? COPY.imageAIError : COPY.aiUnavailable));
       setMessages(old => [...old, { id: ++sequence.current, role: "assistant", content: body.reply as string, mode: "ai" }] as Message[]);
@@ -114,7 +116,7 @@ export function Chat() {
   return <div className={`ruirui-site chat-app mood-${mood} ${paused ? "motion-paused" : ""}`}>
     {menu && <button className="sidebar-backdrop" aria-label={t(COPY.menuClose)} onClick={() => setMenu(false)}/>}
     <aside className={`chat-sidebar ${menu ? "sidebar-open" : ""}`}>
-      <a className="wordmark" href="/"><span className="brand-flower"><Flower2 size={26}/></span><span>{t(COPY.brand)}<small>{t(COPY.subtitle)}</small></span></a>
+      <a className="wordmark" href={sitePath("/")}><span className="brand-flower"><Flower2 size={26}/></span><span>{t(COPY.brand)}<small>{t(COPY.subtitle)}</small></span></a>
       <p className="sidebar-caption">{t(COPY.sidebarNote)}</p>
       <button className="sidebar-new" disabled={busy || !recordsReady || loadingRecord} onClick={newChat}><Plus size={19}/>{t(COPY.newChat)}</button>
       <p className="sidebar-label">{t(COPY.chatsLabel)}</p>
@@ -125,7 +127,7 @@ export function Chat() {
       </nav>
       <div className="history-list" aria-label={t(COPY.historyTitle)}>{records.filter(record => record.title || record.image).map(record => <button key={record.id} aria-pressed={record.id === recordId} disabled={busy || loadingRecord} onClick={() => void openRecord(record.id)}><MessageCircle size={14}/><span data-user-content>{record.title || t(COPY.attachmentText)}</span></button>)}</div>
       <div className="sidebar-love"><Heart size={36} strokeWidth={1}/><p>{t(COPY.heroLine1)}<br/>{t(COPY.heroLine2)}{t(COPY.heroLine3)}</p><small>{t(COPY.heroNote)}</small></div>
-      <div className="sidebar-bottom"><div className="sidebar-settings"><span>{t(COPY.frontSettings)}</span><ModeSettings/></div><span>{t(COPY.moodLabel)}</span><div className="mood-options">{[["peach", COPY.moodPeach], ["rose", COPY.moodRose], ["cream", COPY.moodCream]].map(([value, label]) => <button className={`mood-choice mood-dot-${value}`} key={value} aria-label={t(label)} aria-pressed={mood === value} onClick={() => changeMood(value)}><i/>{t(label)}</button>)}</div><button className="motion-control" onClick={() => setPaused(value => !value)}>{paused ? <Play size={14}/> : <Pause size={14}/>}<span>{t(paused ? COPY.motionOff : COPY.motionOn)}</span></button><a href="/admin"><Sparkles size={15}/>{t(COPY.admin)}<ArrowUpRight size={14}/></a></div>
+      <div className="sidebar-bottom"><div className="sidebar-settings"><span>{t(COPY.frontSettings)}</span><ModeSettings/></div><span>{t(COPY.moodLabel)}</span><div className="mood-options">{[["peach", COPY.moodPeach], ["rose", COPY.moodRose], ["cream", COPY.moodCream]].map(([value, label]) => <button className={`mood-choice mood-dot-${value}`} key={value} aria-label={t(label)} aria-pressed={mood === value} onClick={() => changeMood(value)}><i/>{t(label)}</button>)}</div><button className="motion-control" onClick={() => setPaused(value => !value)}>{paused ? <Play size={14}/> : <Pause size={14}/>}<span>{t(paused ? COPY.motionOff : COPY.motionOn)}</span></button><a href={sitePath("/admin")}><Sparkles size={15}/>{t(COPY.admin)}<ArrowUpRight size={14}/></a></div>
     </aside>
     <main className="chat-main" id="chat">
       <header className="chat-topbar"><button className="mobile-menu icon-button" aria-label={t(COPY.menuOpen)} onClick={() => setMenu(true)}><Menu size={23}/></button><div className="avatar">{t(COPY.brand)}<span/></div><div className="chat-person"><h1>{t(COPY.brand)}<Heart size={13}/></h1><p>{t(COPY.chatSubtitle)}</p></div><div className="chat-top-actions"><button className="icon-button" aria-label={t(COPY.navWhispers)} onClick={() => showPanel("whispers")}><Flower2 size={21}/></button><button className="icon-button" aria-label={t(COPY.clear)} onClick={() => setClearDialog(true)} disabled={busy || !visibleMessages.length}><RotateCcw size={19}/></button></div></header>
@@ -138,7 +140,7 @@ export function Chat() {
       </div>
       <div className="chat-input-area">
         {recordNotice && <p className="history-notice" role="status">{t(recordNotice)}</p>}
-        {error && <div className="chat-error" role="alert"><p>{error}</p><a href="/admin">{t(COPY.aiSettings)}<ArrowUpRight size={13}/></a></div>}
+        {error && <div className="chat-error" role="alert"><p>{error}</p><a href={sitePath("/admin")}>{t(COPY.aiSettings)}<ArrowUpRight size={13}/></a></div>}
         {mode === "whisper" ? <div className="quick-area"><p>{t(COPY.quickLabel)}</p><div className="preset-choices">{presets.map(([prompt], index) => <button key={prompt} onClick={() => sayPreset(index)}>{t(prompt)}<Heart size={13}/></button>)}</div></div> : <form onSubmit={event => { event.preventDefault(); void send(); }}>
           {attachment && <div className="attachment-preview"><button type="button" aria-label={t(COPY.imagePreview)} onClick={() => setLargeImage(attachment)}><img src={attachment} alt={t(COPY.imageAlt)}/></button><span><Check size={14}/>{t(COPY.imageReady)}</span><button type="button" className="icon-button" aria-label={t(COPY.imageRemove)} onClick={() => setAttachment(undefined)}><X size={17}/></button></div>}
           <div className="chat-composer"><input ref={fileInput} type="file" accept="image/jpeg,image/png,image/webp" hidden onChange={event => void chooseImage(event.target.files?.[0])}/><button className="attach-button icon-button" type="button" aria-label={t(COPY.imageChoose)} disabled={busy || !recordsReady || loadingRecord || imageBusy} onClick={() => fileInput.current?.click()}>{imageBusy ? <LoaderCircle className="spin" size={22}/> : <ImagePlus size={23}/>}</button><label className="sr-only" htmlFor="message">{t(COPY.composerLabel)}</label><textarea id="message" ref={composer} rows={1} maxLength={2000} disabled={!recordsReady || loadingRecord} value={input} onChange={event => setInput(event.target.value)} placeholder={t(COPY.messagePlaceholder)} onKeyDown={event => { if (event.key === "Enter" && !event.shiftKey && !event.nativeEvent.isComposing) { event.preventDefault(); void send(); } }}/><button className="send-button" type="submit" aria-label={t(COPY.send)} disabled={busy || !recordsReady || loadingRecord || imageBusy || (!input.trim() && !attachment)}><ArrowUp size={21}/></button></div><p className="composer-note">{imageBusy ? t(COPY.imageBusy) : t(COPY.composerNote)}</p>
