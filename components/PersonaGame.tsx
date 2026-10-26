@@ -77,11 +77,11 @@ export function PersonaGame({ personaId, game, onDirective, disabled }: Props) {
   }
 
   function sign() {
-    if (stats.day === day) { direct("今天已经亲过了，再黏主人一会儿，贴着主人不许走。"); bump({ bond: 2, lust: 3 }); setFlash("今日已签到 · 再黏一会儿"); return; }
+    if (stats.day === day) { direct("今天已经亲过了，再黏我一会儿，贴着我不许走。"); bump({ bond: 2, lust: 3 }); setFlash("今日已签到 · 再黏一会儿"); return; }
     const next = { ...stats, bond: Math.min(999, stats.bond + 8), streak: stats.streak + 1, day };
     setStats(next); saveStats(personaId, next);
     setFlash(`签到成功 · 亲密度 +8 · 连签 ${next.streak} 天`);
-    direct("过来，让主人亲一口，从耳根一路亲到锁骨，被亲到就自己把裙子掀起来求。");
+    direct("过来，让我亲一口，从耳根一路亲到锁骨，被亲到就自己把裙子掀起来求。");
   }
 
   function chant() {
@@ -184,7 +184,7 @@ export function PersonaGame({ personaId, game, onDirective, disabled }: Props) {
   }
 
   const busy = disabled;
-  const direct = (text: string) => /^(主人|呜|唔|是，主人|啊)/.test(text) ? onDirective("跪好，把这句话说给主人听：「" + text + "」") : onDirective(text);
+  const direct = (text: string) => /^(主人|呜|唔|是，主人|啊)/.test(text) ? onDirective("跪好，把这句话说给我听：「" + text + "」") : onDirective(text);
   const Icon = game.kind === "dice" ? Dices : game.kind === "timer" ? Timer : game.kind === "lock" ? Lock : game.kind === "wheel" ? Sparkles : game.kind === "cards" ? Crown : game.kind === "daily" ? ScrollText : game.kind === "task" ? Trophy : game.kind === "chant" ? Flame : Heart;
   return <section className={`persona-game game-${game.kind}`}>
     <header className="pg-head">
@@ -226,7 +226,7 @@ export function PersonaGame({ personaId, game, onDirective, disabled }: Props) {
         <div className="pg-row">
           {!running ? <button className="pg-btn primary" disabled={busy} onClick={() => { if (remaining === 0) restartTimer(); else setRunning(true); }}><Play size={13}/>{remaining === 0 ? t(COPY.gameAgain) : t(game.action)}</button>
             : <button className="pg-btn ghost" disabled={busy} onClick={() => setRunning(false)}><Pause size={13}/>先停下</button>}
-          <button className="pg-btn ghost" disabled={busy || !running} onClick={() => { bump({ lust: 3 }); direct("再顶一下，叫大声点，主人还没过瘾。"); }}><Flame size={13}/>顶一下</button>
+          <button className="pg-btn ghost" disabled={busy || !running} onClick={() => { bump({ lust: 3 }); direct("再顶一下，叫大声点，我还没过瘾。"); }}><Flame size={13}/>顶一下</button>
         </div>
       </div>}
       {game.kind === "wheel" && <div className="pg-wheel">

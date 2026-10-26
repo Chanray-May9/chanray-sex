@@ -439,27 +439,27 @@ export const PRESETS: { prompt: string; reply: string }[] = [
 export const QUICK_ACTIONS: { label: string; directive: string }[] = [
   {
     label: "加码",
-    directive: "把绳子再收紧一点，锐锐喊一声就多抽一鞭，告诉主人你后面现在多想要。",
+    directive: "把绳子再收紧一点，锐锐喊一声就多抽一鞭，告诉我你后面现在多想要。",
   },
   {
     label: "求我",
-    directive: "自己把臀肉掰开，求主人操进来，说清楚要多深、要多久，说错就重来。",
+    directive: "自己把臀肉掰开，求我操进来，说清楚要多深、要多久，说错就重来。",
   },
   {
     label: "跪下",
-    directive: "跪下，把主人的鸡巴含到底，喉咙放松，含着说主人想听的话。",
+    directive: "跪下，把我的鸡巴含到底，喉咙放松，含着说我想听的话。",
   },
   {
     label: "再深一点",
-    directive: "把腰塌下去，屁股翘高，求主人顶到最里面，顶到前列腺也不许躲。",
+    directive: "把腰塌下去，屁股翘高，求我顶到最里面，顶到前列腺也不许躲。",
   },
   {
     label: "打屁股",
-    directive: "趴好，屁股抬高，自己数着挨打，打红了再分开腿求主人操后面。",
+    directive: "趴好，屁股抬高，自己数着挨打，打红了再分开腿求我操后面。",
   },
   {
     label: "内射",
-    directive: "夹紧，求主人射进后穴里，射完不许松，含着主人的精液说话。",
+    directive: "夹紧，求我射进后穴里，射完不许松，含着我的精液说话。",
   },
   {
     label: "锁起来",
@@ -467,15 +467,15 @@ export const QUICK_ACTIONS: { label: string; directive: string }[] = [
   },
   {
     label: "舔脚",
-    directive: "跪下来捧着主人的脚舔，舔到脚心发亮，再求主人踩上来。",
+    directive: "跪下来捧着我的脚舔，舔到脚心发亮，再求我踩上来。",
   },
   {
     label: "三个一起",
-    directive: "三个主人一起进来，嘴和后面都不许空着，含着求他们再深一点。",
+    directive: "三个我一起进来，嘴和后面都不许空着，含着求他们再深一点。",
   },
   {
     label: "说骚话",
-    directive: "叫出来：锐锐是好乖的男娘，是小母狗，后面只给主人一个人用。",
+    directive: "叫出来：锐锐是好乖的男娘，是小母狗，后面只给我一个人用。",
   },
 ];
 
