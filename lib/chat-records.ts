@@ -1,5 +1,5 @@
 export type SavedMessage = { id: number; role: "user" | "assistant"; content: string; mode: "whisper" | "ai"; image?: string; failed?: boolean };
-export type ChatRecord = { id: string; updatedAt: number; mode: "whisper" | "ai"; messages: SavedMessage[]; scope?: "normal" | "hidden" };
+export type ChatRecord = { id: string; updatedAt: number; mode: "whisper" | "ai"; messages: SavedMessage[]; scope?: string };
 export type RecordSummary = { id: string; updatedAt: number; title: string; image: boolean };
 let opening: Promise<IDBDatabase> | undefined;
 let writes = Promise.resolve();
@@ -20,7 +20,7 @@ export function summary(record: ChatRecord): RecordSummary {
   const user = record.messages.find(message => message.role === "user");
   return { id: record.id, updatedAt: record.updatedAt, title: user?.content.slice(0, 25) || "", image: Boolean(user?.image) };
 }
-export async function loadRecords(scope: "normal" | "hidden" = "normal"): Promise<ChatRecord[]> {
+export async function loadRecords(scope: string = "normal"): Promise<ChatRecord[]> {
   const db = await database();
   return new Promise((resolve, reject) => {
     const request = db.transaction("conversations").objectStore("conversations").getAll();

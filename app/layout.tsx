@@ -4,8 +4,8 @@ import "./ruirui.css";
 import { SiteContentProvider } from "@/components/SiteContent";
 
 export const metadata: Metadata = {
-  title: "锐锐 · 想靠近你",
-  description: "主人，锐锐在这里。聊一会儿，听句悄悄话，留一点只属于我们的时间。",
+  title: "锐锐 · 想要主人",
+  description: "主人，门关好了。锐锐不装了——今晚想被你怎么用，直接说。",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",

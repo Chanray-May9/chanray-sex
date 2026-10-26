@@ -1,11 +1,16 @@
-import { sitePath } from "../lib/navigation";
+﻿import { sitePath } from "../lib/navigation";
 "use client";
 import { useEffect, useState } from "react";
 import { ArrowUpRight, Heart, Flower2, ArrowRight, Pause, Play } from "lucide-react";
 import { ModeSettings } from "./ModeSettings";
+import { Scenes } from "./Scenes";
+import { PersonaWindows } from "./PersonaWindows";
+import { Contract } from "./Contract";
 import { COPY } from "@/lib/site-copy";
+import { WHISPERS } from "@/lib/erotic";
+import { PERSONAS } from "@/lib/personas";
 import { useSiteText } from "./SiteContent";
-const whispers = [COPY.whisper1, COPY.whisper2, COPY.whisper3, COPY.whisper4];
+const whispers = WHISPERS;
 export function Ruirui() {
   const t = useSiteText();
   const [whisper, setWhisper] = useState(0);
@@ -23,8 +28,10 @@ export function Ruirui() {
       <a className="wordmark" href={sitePath("/")} aria-label={t(COPY.footerNote)}><span className="brand-flower"><Flower2 size={26} strokeWidth={1.4}/></span><span>{t(COPY.brand)}<small>{t(COPY.subtitle)}</small></span></a>
       <nav className="rui-nav" aria-label={t(COPY.sessionTitle)}>
         <button className={active === "chat" ? "active" : ""} onClick={() => go("chat")}>{t(COPY.navChat)}</button>
+        <button className={active === "windows" ? "active" : ""} onClick={() => go("windows")}>{t(COPY.windowsLabel)}</button>
+        <button className={active === "scenes" ? "active" : ""} onClick={() => go("scenes")}>{t(COPY.navTonight)}</button>
+        <button className={active === "rules" ? "active" : ""} onClick={() => go("rules")}>{t(COPY.navRules)}</button>
         <button className={active === "whispers" ? "active" : ""} onClick={() => go("whispers")}>{t(COPY.navWhispers)}</button>
-        <button className={active === "together" ? "active" : ""} onClick={() => go("together")}>{t(COPY.navTogether)}</button>
       </nav>
       <ModeSettings/>
       <div className="header-note"><span className="tiny-heart">♡</span>{t(COPY.heroNote)}</div>
@@ -44,12 +51,15 @@ export function Ruirui() {
             <span className="art-caption">{t(COPY.orbitNote)}</span>
           </div>
         </div>
-        <section className="home-chat-invitation" aria-labelledby="invite-title"><div className="invite-heart"><Heart size={64} strokeWidth={1}/></div><p className="hero-eyebrow">{t(COPY.chatInvitationLabel)}</p><h2 id="invite-title">{t(COPY.chatInvitationTitle)}</h2><p>{t(COPY.chatInvitationDescription)}</p><a className="primary-button" href={sitePath("/chat")}>{t(COPY.navChat)}<ArrowUpRight size={18}/></a><span className="invite-detail">{t(COPY.chatInvitationDetail)}</span></section>
+        <section className="home-chat-invitation" aria-labelledby="invite-title"><div className="invite-heart"><Heart size={64} strokeWidth={1}/></div><p className="hero-eyebrow">{t(COPY.chatInvitationLabel)}</p><h2 id="invite-title">{t(COPY.chatInvitationTitle)}</h2><p>{t(COPY.chatInvitationDescription)}</p><a className="primary-button" href={sitePath("/chat")}>{t(COPY.navChat)}<ArrowUpRight size={18}/></a><div className="persona-preview" aria-label={t(COPY.windowsLabel)}>{PERSONAS.map(persona => <a key={persona.id} href={`${sitePath("/chat")}?persona=${encodeURIComponent(persona.id)}`}><i style={{ background: persona.accent }}/>{t(persona.name)}</a>)}</div><span className="invite-detail">{t(COPY.chatInvitationDetail)}</span></section>
       </section>
+      <PersonaWindows/>
+      <Scenes/>
       <section className="small-moments" aria-label={t(COPY.heroSecondary)}>
         <article className="whisper-card" id="whispers"><div className="section-eyebrow"><Flower2 size={18}/>{t(COPY.whisperLabel)}</div><h2>{t(COPY.whisperTitle)}</h2><p className="whisper-intro">{t(COPY.whisperIntro)}</p><div className="handwritten-message" key={whisper}><span className="quotation">“</span><p>{t(whispers[whisper])}</p><span className="letter-signature">— {t(COPY.whisperSignature)} ♡</span></div><button className="outline-button" onClick={() => setWhisper(value => (value + 1) % whispers.length)}>{t(COPY.nextWhisper)}<ArrowRight size={16}/></button><span className="letter-scribble" aria-hidden>♡</span></article>
         <article className="together-card" id="together"><div className="section-eyebrow"><Heart size={16}/>{t(COPY.littleTitle)}</div><h2>{t(COPY.littleQuiet)}</h2><p>{t(COPY.littleDescription)}</p><button className={`pulse-heart ${hearts ? "heart-touched" : ""}`} onClick={() => setHearts(value => value + 1)} aria-label={t(COPY.littleTouch)}><Heart key={hearts} size={47} strokeWidth={1.1} fill={hearts ? "currentColor" : "none"}/><span className="heart-orbit"/></button><div className="heart-feedback" aria-live="polite">{t(hearts ? COPY.littleReceived : COPY.littleTouch)}</div><span className="tiny-flower" aria-hidden>✧</span></article>
       </section>
+      <Contract/>
       <div className="mood-controls"><div><span>{t(COPY.moodLabel)}</span><div className="mood-options">{[["peach", COPY.moodPeach], ["rose", COPY.moodRose], ["cream", COPY.moodCream]].map(([value, label]) => <button className={`mood-choice mood-dot-${value}`} key={value} aria-label={t(label)} aria-pressed={mood === value} onClick={() => changeMood(value)}><i/>{t(label)}</button>)}</div></div><button className="motion-control" onClick={() => setPaused(value => !value)}>{paused ? <Play size={12}/> : <Pause size={12}/>}<span>{t(paused ? COPY.motionOff : COPY.motionOn)}</span></button></div>
     </main>
     <footer className="rui-footer"><p><Flower2 size={15}/>{t(COPY.footer)}</p><span>{t(COPY.copyright)}</span><a href={sitePath("/admin/")}>{t(COPY.admin)}<ArrowUpRight size={12}/></a></footer>

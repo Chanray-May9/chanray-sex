@@ -1,7 +1,11 @@
-import { resolveAIConfig, FLIRT_BOUNDARY } from "./_config.js";
+import { resolveAIConfig } from "./_config.js";
+import { PERSONAS, PERSONA_MODE_PROMPT } from "./_personas.js";
 // Shared OpenAI-compatible chat-completions client.
 
-export const PERSONA = `你是虚构的成年聊天角色锐锐，称呼用户主人。语气主动、挑逗，中文简短自然，不使用宣传式套话。`;
+// Legacy single-window fallback persona, kept exported for existing callers.
+export const PERSONA = PERSONA_MODE_PROMPT;
+
+export const DEFAULT_MAX_TOKENS = 900;
 
 export async function askAI(env, messages, opts = {}) {
   let config;
@@ -11,6 +15,12 @@ export async function askAI(env, messages, opts = {}) {
     return null;
   }
   if (!config.apiKey || (opts.flirt && !config.enabled)) return null;
+  const persona =
+    opts.persona && Object.hasOwn(PERSONAS, opts.persona) ? PERSONAS[opts.persona] : null;
+  // Persona window wins; legacy flirt mode uses the configured prompt as-is
+  // (no boundary appendix); everything else falls back to the explicit persona.
+  const system = persona ? persona.system : opts.flirt ? config.prompt : opts.system || PERSONA;
+  const maxTokens = opts.max_tokens || persona?.maxTokens || DEFAULT_MAX_TOKENS;
   // One deadline covers every retry, including response-body reads.
   const signal = AbortSignal.timeout(12_000);
   for (let attempt = 0; attempt < 2; attempt++) {
@@ -25,14 +35,8 @@ export async function askAI(env, messages, opts = {}) {
         },
         body: JSON.stringify({
           model: config.model,
-          messages: [
-            {
-              role: "system",
-              content: opts.flirt ? `${config.prompt}\n${FLIRT_BOUNDARY}` : opts.system || PERSONA,
-            },
-            ...messages,
-          ],
-          max_tokens: opts.max_tokens || 500,
+          messages: [{ role: "system", content: system }, ...messages],
+          max_tokens: maxTokens,
           temperature: 0.9,
           ...(["api.deepseek.com", "open.bigmodel.cn"].includes(new URL(config.apiURL).hostname)
             ? { thinking: { type: "disabled" } }

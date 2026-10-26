@@ -3,6 +3,7 @@ import { readMode } from "./_activation.js";
 import { json, ok, readObject } from "./_http.js";
 // AI endpoint: chat with 锐锐酱, or generate a site theme from a description.
 import { askAI, PERSONA } from "./_ai.js";
+import { PERSONAS } from "./_personas.js";
 
 function validContent(message) {
   if (ok(message.content, 2000)) return true;
@@ -68,6 +69,17 @@ export async function onRequestPost({ request, env }) {
   const messages = body.messages.map(({ role, content }) => ({ role, content }));
   if (body.mode && !["chat", "flirt"].includes(body.mode))
     return json({ error: "invalid mode" }, 400);
-  const reply = await askAI(env, messages, { system: PERSONA, flirt: body.mode === "flirt" });
+  if (body.persona !== undefined && body.persona !== null && body.persona !== "") {
+    if (typeof body.persona !== "string" || !Object.hasOwn(PERSONAS, body.persona))
+      return json({ error: "invalid persona" }, 400);
+  }
+  const persona = typeof body.persona === "string" && body.persona ? body.persona : undefined;
+  // Persona windows and the legacy "flirt" mode always use the explicit persona prompt.
+  const explicit = body.mode === "flirt" || Boolean(persona);
+  const reply = await askAI(env, messages, {
+    system: PERSONA,
+    flirt: explicit,
+    persona: explicit ? persona : undefined,
+  });
   return reply ? json({ reply }) : json({ error: "upstream" }, 502);
 }
