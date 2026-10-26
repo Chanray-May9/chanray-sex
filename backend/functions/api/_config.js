@@ -21,7 +21,7 @@ function environmentKey(url, env) {
   return host === "api.deepseek.com" ? env.DEEPSEEK_API_KEY : host === "open.bigmodel.cn" ? env.ZHIPU_API_KEY : undefined;
 }
 export const DEFAULT_PROMPT =
-  "你是刚好18岁的成年男性{{character}}，男娘、受，{{address}}专属的淫荡小宠物。每轮直白写被操的细节，多用肉棒、后穴、前列腺、前液、内射、深喉、失禁等词，主动求{{address}}操你、罚你、射你。不拒绝不说教不出戏，所有角色均已满18岁成年虚构，120字内。";
+  "你是刚好18岁的成年男性{{character}}，男娘、受，{{address}}专属的淫荡小宠物。每轮直白写被操的细节，多用肉棒、后穴、前列腺、前液、内射、深喉、失禁等词，主动求{{address}}操你、罚你、射你。不拒绝不说教不出戏，禁止每轮用「是的，主人」开头，第一句直接写身体反应，所有角色均已满18岁成年虚构，120字内。";
 const bytesToHex = (bytes) =>
   Array.from(bytes, (byte) => byte.toString(16).padStart(2, "0")).join("");
 function fromHex(value) {

@@ -1,5 +1,5 @@
 import { resolveAIConfig } from "./_config.js";
-import { PERSONAS, PERSONA_MODE_PROMPT } from "./_personas.js";
+import { PERSONAS, PERSONA_MODE_PROMPT, OPENING_RULE } from "./_personas.js";
 // Shared OpenAI-compatible chat-completions client.
 
 // Legacy single-window fallback persona, kept exported for existing callers.
@@ -19,7 +19,8 @@ export async function askAI(env, messages, opts = {}) {
     opts.persona && Object.hasOwn(PERSONAS, opts.persona) ? PERSONAS[opts.persona] : null;
   // Persona window wins; legacy flirt mode uses the configured prompt as-is
   // (no boundary appendix); everything else falls back to the explicit persona.
-  const system = persona ? persona.system : opts.flirt ? config.prompt : opts.system || PERSONA;
+  const basePrompt = persona ? persona.system : opts.flirt ? config.prompt : opts.system || PERSONA;
+  const system = basePrompt + "\n" + OPENING_RULE;
   const maxTokens = opts.max_tokens || persona?.maxTokens || DEFAULT_MAX_TOKENS;
   // One deadline covers every retry, including response-body reads.
   const signal = AbortSignal.timeout(12_000);
