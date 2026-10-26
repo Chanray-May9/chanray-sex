@@ -232,7 +232,7 @@ export function PersonaGame({ personaId, game, onDirective, disabled }: Props) {
         <div className={spinning ? "pg-wheel-face spinning" : "pg-wheel-face"}>{wheel && <><b>{t(wheel.label)}</b><p>{t(wheel.text)}</p></>}</div>
         <div className="pg-row">
           <button className="pg-btn primary" disabled={busy || spinning} onClick={spinWheel}><Sparkles size={13}/>{t(game.action)}</button>
-          <button className="pg-btn ghost" disabled={busy || !wheel} onClick={takeWheel}><Heart size={13}/>就这个分身</button>
+          <button className="pg-btn ghost" disabled={busy || !wheel} onClick={takeWheel}><Heart size={13}/>就要这个</button>
         </div>
       </div>}
       {game.kind === "dice" && <div className="pg-dice">
