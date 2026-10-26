@@ -6072,6 +6072,33 @@
     ]
   },
   {
+    "original": "已生效 · 卖身契",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "components/Contract.tsx"
+    ]
+  },
+  {
+    "original": "已落笔 · 待按手印",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "components/Contract.tsx"
+    ]
+  },
+  {
+    "original": "未签 · 等主人落笔",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "components/Contract.tsx"
+    ]
+  },
+  {
     "original": "契 字 第 零 壹 号 · 主人亲启",
     "groups": [
       "首页与聊天"
@@ -6162,6 +6189,42 @@
     ]
   },
   {
+    "original": "写下主人的名字",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "components/Contract.tsx"
+    ]
+  },
+  {
+    "original": "落笔",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "components/Contract.tsx"
+    ]
+  },
+  {
+    "original": "先不签",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "components/Contract.tsx"
+    ]
+  },
+  {
+    "original": "点这里，签下主人的名字",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "components/Contract.tsx"
+    ]
+  },
+  {
     "original": "乙方 · 锐锐",
     "groups": [
       "首页与聊天"
@@ -6180,7 +6243,70 @@
     ]
   },
   {
+    "original": "按下手印，契约生效",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "components/Contract.tsx"
+    ]
+  },
+  {
     "original": "锐锐的指印",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "components/Contract.tsx"
+    ]
+  },
+  {
+    "original": "按住，按下指印",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "components/Contract.tsx"
+    ]
+  },
+  {
+    "original": "先让主人落笔",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "components/Contract.tsx"
+    ]
+  },
+  {
+    "original": "名字落下了，再按手印才算卖身。",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "components/Contract.tsx"
+    ]
+  },
+  {
+    "original": "契书还没签，锐锐一直在等主人落笔。",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "components/Contract.tsx"
+    ]
+  },
+  {
+    "original": "再点一次，撕毁重签",
+    "groups": [
+      "首页与聊天"
+    ],
+    "sources": [
+      "components/Contract.tsx"
+    ]
+  },
+  {
+    "original": "撕毁，重签",
     "groups": [
       "首页与聊天"
     ],

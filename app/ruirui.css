@@ -250,3 +250,29 @@ body{margin:0;font-family:"Inter","PingFang SC","Microsoft YaHei",sans-serif;bac
 @keyframes sealStamp{0%{transform:scale(1.9) rotate(-24deg);opacity:0}60%{opacity:.95}100%{transform:scale(1) rotate(-13deg);opacity:.82}}
 .contract-paper.signed{transform:rotate(-.15deg)}
 @media(max-width:800px){.contract-section{padding:8px 14px 26px}.contract-paper{padding:34px 22px 28px}.contract-terms{grid-template-columns:1fr}.contract-seal{right:18px;width:86px;height:86px;font-size:18px}.contract-watermark{font-size:110px}}
+
+/* 卖身契互动 */
+.contract-status{position:absolute;left:50%;top:-14px;transform:translateX(-50%);font-size:10px;letter-spacing:3px;padding:5px 14px;border:1px solid #ddbca6;border-radius:999px;background:#fff8ef;color:#a57c5f;box-shadow:0 3px 10px #0000000d;z-index:2;white-space:nowrap}
+.contract-status.written{color:#a7372f;border-color:#d8a08f}
+.contract-status.sealed{color:#fff6ee;background:#a7372f;border-color:#8f2a23}
+.contract-signatures .sign-row{align-items:center}
+.sign-line-button{flex:1;border:0;border-bottom:1px solid #7f5a45;background:none;min-height:30px;display:flex;align-items:center;justify-content:center;gap:7px;font-size:12px;color:#a17362;padding:0 4px;cursor:pointer;transition:color .2s,border-color .2s,background .2s;text-align:center}
+.sign-line-button:hover{color:#a7372f;border-color:#a7372f;background:#fff7f0}
+.sign-line-button i{border-bottom:0!important;height:auto!important;flex:none!important}
+.sign-form{flex:1;display:flex;align-items:center;gap:8px;border-bottom:1px solid #a7372f;min-height:32px;flex-wrap:wrap}
+.sign-form input{flex:1;border:0;background:none;outline:none;font-family:"Brush Script MT","STKaiti","KaiTi",cursive;font-size:21px;color:#8f2f28;text-align:center;letter-spacing:2px;min-width:80px}
+.sign-form input::placeholder{font-family:"PingFang SC","Microsoft YaHei",sans-serif;font-size:11px;color:#c0a08c;letter-spacing:1px}
+.sign-form button{display:inline-flex;align-items:center;gap:4px;font-size:11px;color:#a7372f;background:none;border:0;white-space:nowrap}
+.sign-form .sign-cancel{color:#b09480;font-size:10px}
+.sign-name.master{font-size:25px;color:#8f2f28;letter-spacing:3px}
+.sign-row .sign-name.signed-always{font-size:20px;color:#8f2f28;opacity:.92;letter-spacing:3px}
+.fingerprint{position:relative;display:flex;flex-direction:column;align-items:center;gap:3px;width:86px;background:none;border:1px dashed transparent;border-radius:8px;padding:6px 4px 4px;color:#b4544b;opacity:.45;transition:opacity .2s,border-color .2s,transform .2s}
+.fingerprint.ready{opacity:1;border-color:#d8a08f;cursor:pointer;animation:fingerHint 2.2s ease-in-out infinite}
+.fingerprint.ready:hover{background:#fff3ec;transform:translateY(-1px)}
+.fingerprint.stamped{opacity:1;border-color:transparent;cursor:default;animation:none;color:#b02d24;filter:drop-shadow(0 0 1px #b02d24)}
+@keyframes fingerHint{0%,100%{box-shadow:0 0 0 0 #b6332a1f}50%{box-shadow:0 0 0 7px #b6332a00}}
+.contract-hint{flex:1;font-size:11px;color:#9b7b65;line-height:1.8;margin:0;min-width:200px}
+.contract-tear{margin-top:12px;display:inline-flex;align-items:center;gap:5px;font-size:10px;color:#b08a74;text-decoration:underline;background:none;border:0;opacity:.75;align-self:flex-start}
+.contract-tear:hover{opacity:1;color:#a7372f}
+.contract-tear.armed{color:#a7372f;font-weight:600}
+@media(max-width:800px){.contract-status{position:static;transform:none;display:table;margin:0 auto 10px}.sign-line-button{font-size:11px}.fingerprint{width:74px}}
