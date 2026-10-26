@@ -207,3 +207,46 @@ body{margin:0;font-family:"Inter","PingFang SC","Microsoft YaHei",sans-serif;bac
 .window-game svg:last-child{margin-left:auto;opacity:.6}
 @media(max-width:1100px){.windows-section{padding-left:30px;padding-right:30px}.windows-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.windows-section{padding-left:22px;padding-right:22px}.windows-grid{grid-template-columns:1fr}.window-card{padding:18px}}
+
+/* ============ 卖身契 ============ */
+.contract-section{max-width:1280px;margin:auto;padding:10px 48px 40px;display:flex;justify-content:center}
+.contract-paper{position:relative;width:min(880px,100%);padding:46px 56px 40px;background:radial-gradient(circle at 12% 8%,#fffdf8,transparent 55%),repeating-linear-gradient(0deg,#fdf7ef,#fdf7ef 33px,#f8eee2 33px,#f8eee2 34px),#fffaf2;border:1px solid #e7cfbb;border-radius:6px;box-shadow:0 22px 60px #b6876b22,inset 0 0 0 6px #fffdf8,inset 0 0 0 7px #eed9c6;transform:rotate(-.35deg);color:#5d4436}
+.contract-paper:after{content:"";position:absolute;inset:14px;border:1px solid #e9cdb6aa;pointer-events:none;border-radius:3px}
+.contract-watermark{position:absolute;right:40px;top:26px;font-size:150px;font-family:"Songti SC","STSong",serif;color:#c4488012;line-height:1;pointer-events:none}
+.contract-tape{position:absolute;width:96px;height:26px;background:#f7dfe9cc;border:1px solid #eccfdc;box-shadow:0 3px 8px #0000000d}
+.tape-left{left:60px;top:-13px;transform:rotate(-7deg)}
+.tape-right{right:60px;top:-13px;transform:rotate(6deg)}
+.contract-head{text-align:center;border-bottom:1px dashed #d9bfa8;padding-bottom:18px}
+.contract-no{font-size:10px;letter-spacing:4px;color:#a98a72}
+.contract-head h2{font-family:"Songti SC","STSong","SimSun",serif;font-size:clamp(26px,3.4vw,40px);letter-spacing:6px;color:#7a3b2e;margin:14px 0 10px;font-weight:600}
+.contract-sub{font-size:12px;color:#9a7a63;line-height:1.9}
+.contract-parties{margin:20px 0 8px;font-size:12.5px;line-height:2;color:#684f40}
+.contract-parties p{display:flex;gap:14px;flex-wrap:wrap}
+.contract-parties b{color:#8f4e3a;letter-spacing:2px;flex-shrink:0}
+.contract-oath{margin-top:10px;line-height:2.1;color:#6f5544;background:#fffdf899;border-left:3px solid #d8a58c;padding:10px 14px;display:block!important}
+.contract-clauses{list-style:none;margin:18px 0 6px;padding:0}
+.contract-clauses li{display:flex;gap:14px;padding:9px 0;border-bottom:1px dotted #e2cdbb;align-items:flex-start}
+.clause-no{flex-shrink:0;width:42px;font-size:11px;color:#a7372f;border:1px solid #e0b3a0;border-radius:3px;text-align:center;height:22px;line-height:20px;background:#fff8f2;letter-spacing:1px}
+.contract-clauses li p{font-size:12.5px;line-height:1.9;color:#6a5040}
+.contract-terms{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+.contract-terms>div{background:#fffdf7cc;border:1px dashed #dcc0a9;border-radius:4px;padding:12px 14px}
+.contract-terms b{display:flex;align-items:center;gap:6px;font-size:11px;color:#a33f34;letter-spacing:3px;margin-bottom:6px}
+.contract-terms p{font-size:12px;line-height:1.9;color:#75594a}
+.contract-signatures{display:grid;gap:14px;margin:22px 0 6px}
+.sign-row{display:flex;align-items:flex-end;gap:14px;font-size:12px;color:#8a6a55}
+.sign-row span{letter-spacing:2px;flex-shrink:0}
+.sign-row i{flex:1;border-bottom:1px solid #7f5a45;height:26px;display:flex;align-items:flex-end;justify-content:center}
+.sign-name{font-family:"Brush Script MT","STKaiti","KaiTi",cursive;font-size:22px;color:#8f2f28;font-style:normal;letter-spacing:3px;line-height:1}
+.contract-date{font-size:11px;color:#9b7b65;text-align:right;letter-spacing:1px;margin:0}
+.contract-bottom{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:14px;padding-top:16px;border-top:1px dashed #d9bfa8}
+.fingerprint{display:flex;flex-direction:column;align-items:center;gap:3px;color:#b4544b;width:74px}
+.fingerprint svg{width:52px;height:52px}
+.fingerprint span{font-size:9px;letter-spacing:1px;color:#a17362}
+.contract-sign-button{display:inline-flex;align-items:center;gap:9px;background:#a7372f;color:#fff8f2;border:1px solid #8f2a23;border-radius:3px;padding:13px 20px;font-size:12px;letter-spacing:2px;box-shadow:0 6px 16px #a7372f26;transition:background .2s,transform .2s}
+.contract-sign-button:hover{background:#8f2a23;transform:translateY(-1px)}
+.contract-signed{display:flex;align-items:center;gap:8px;font-size:12px;color:#a7372f;letter-spacing:1px;border:1px solid #c98c7d;border-radius:3px;padding:10px 15px;background:#fff6f1;margin:0}
+.contract-note{display:flex;align-items:center;gap:7px;font-size:11px;color:#9b7b65;line-height:1.8;flex:1;min-width:200px;margin:0}
+.contract-seal{position:absolute;right:48px;top:34%;width:104px;height:104px;border-radius:50%;border:3px solid #b6332a;color:#b6332a;font-family:"Songti SC","STSong",serif;font-size:22px;font-weight:700;letter-spacing:2px;display:grid;place-content:center;text-align:center;line-height:1.25;transform:rotate(-13deg);opacity:.82;box-shadow:inset 0 0 0 2px #b6332a55,0 0 0 1px #b6332a22;animation:sealStamp .45s cubic-bezier(.2,1.4,.4,1);mix-blend-mode:multiply;pointer-events:none}
+@keyframes sealStamp{0%{transform:scale(1.9) rotate(-24deg);opacity:0}60%{opacity:.95}100%{transform:scale(1) rotate(-13deg);opacity:.82}}
+.contract-paper.signed{transform:rotate(-.15deg)}
+@media(max-width:800px){.contract-section{padding:8px 14px 26px}.contract-paper{padding:34px 22px 28px}.contract-terms{grid-template-columns:1fr}.contract-seal{right:18px;width:86px;height:86px;font-size:18px}.contract-watermark{font-size:110px}}

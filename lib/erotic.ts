@@ -502,7 +502,7 @@ export const CONTRACT: {
   ],
   reward: "乖的话，主人亲手打开笼子，操到锐锐射出来，再抱着睡一整晚。",
   punish: "不乖就戴着笼子跪床边，跳蛋开到最大也不许射，直到锐锐哭着说清错在哪。",
-  signLabel: "签下，锐锐归你",
+  signLabel: "按手印，卖身给主人",
   signedLabel: "已签，锐锐是主人的",
 };
 
