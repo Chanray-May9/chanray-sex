@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { useEffect, useRef, useState } from "react";
 import { Dices, Heart, Timer, Lock, Trophy, Gift, Flame, Play, Pause, RotateCcw, Sparkles, Hourglass, ChevronDown, KeyRound, Crown, ScrollText, Clover, Eye } from "lucide-react";
 import type { GameCard, GameStats, WindowGame } from "@/lib/games";
@@ -54,7 +54,7 @@ export function PersonaGame({ personaId, game, onDirective, disabled }: Props) {
             bump(game.kind === "lock" ? { obedience: 8, lust: 12 } : { obedience: 4, lust: 16 });
             if (game.kind === "lock") { setUnlocked(true); setFlash(t(COPY.gameUnlocked)); }
             else { setFlash(t("时间到，锐锐彻底失控了。")); }
-            onDirective(game.kind === "lock" ? "锁开了，锐锐的后穴早就湿透了，扑上去求主人操，今天不许主人再忍。" : "发情计时结束了，锐锐已经撑不住，自己翘着屁股求主人操进后穴，求主人射满。");
+            direct(game.kind === "lock" ? "锁开了，自己扑上来求操，后穴早就湿透了，今晚不许主人再忍。" : "计时结束，撑不住就别撑了，自己翘起来求主人操进后穴，求主人射满。");
           }
           return 0;
         }
@@ -77,18 +77,18 @@ export function PersonaGame({ personaId, game, onDirective, disabled }: Props) {
   }
 
   function sign() {
-    if (stats.day === day) { onDirective("今天已经亲过了，再黏主人一会儿，贴着主人不许走。"); bump({ bond: 2, lust: 3 }); setFlash("今日已签到 · 再黏一会儿"); return; }
+    if (stats.day === day) { direct("今天已经亲过了，再黏主人一会儿，贴着主人不许走。"); bump({ bond: 2, lust: 3 }); setFlash("今日已签到 · 再黏一会儿"); return; }
     const next = { ...stats, bond: Math.min(999, stats.bond + 8), streak: stats.streak + 1, day };
     setStats(next); saveStats(personaId, next);
     setFlash(`签到成功 · 亲密度 +8 · 连签 ${next.streak} 天`);
-    onDirective("主人把锐锐搂过来亲了一口，从耳根一路舔到锁骨，锐锐要立刻硬着回应，求主人继续往下。");
+    direct("过来，让主人亲一口，从耳根一路亲到锁骨，被亲到就自己把裙子掀起来求。");
   }
 
   function chant() {
     const next = pickOne(game.lines?.filter(item => item !== line));
     if (!next) return;
     setLine(next); bump({ lust: 3 });
-    onDirective(`念给主人听，一个字都不许漏：「${next}」`);
+    direct(`念给主人听，一个字都不许漏：「${next}」`);
   }
 
   function drawTask() {
@@ -99,13 +99,13 @@ export function PersonaGame({ personaId, game, onDirective, disabled }: Props) {
   function obey() {
     if (!card) return;
     bump({ obedience: card.obedience, lust: card.lust });
-    onDirective(t(card.directive));
+    direct(t(card.directive));
   }
 
   function beg() {
     if (!card) return;
     bump({ lust: 6 });
-    onDirective(t(card.mercy));
+    direct(t(card.mercy));
   }
 
   function spinWheel() {
@@ -121,7 +121,7 @@ export function PersonaGame({ personaId, game, onDirective, disabled }: Props) {
   function takeWheel() {
     if (!wheel) return;
     bump({ lust: wheel.lust });
-    onDirective(t(wheel.directive));
+    direct(t(wheel.directive));
   }
 
   function roll() {
@@ -133,7 +133,7 @@ export function PersonaGame({ personaId, game, onDirective, disabled }: Props) {
     if (face === undefined || !game.stakes?.length) return;
     const stake = game.stakes[face % game.stakes.length];
     bump({ lust: stake.lust, obedience: stake.obedience });
-    onDirective(t(stake.directive));
+    direct(t(stake.directive));
     setFace(undefined);
   }
 
@@ -144,19 +144,19 @@ export function PersonaGame({ personaId, game, onDirective, disabled }: Props) {
   function pickCard(next: GameCard) {
     setPicked(next);
     bump({ obedience: next.obedience, lust: next.lust });
-    onDirective(t(next.directive));
+    direct(t(next.directive));
   }
 
   function unlockBeg() {
     bump({ lust: 6 });
     setRemaining(value => Math.min((game.seconds ?? 180) * 3, value + 30));
-    onDirective("主人，锐锐求您开锁，后穴已经痒得受不了了，锁着也要用后面蹭主人。");
+    direct("想要开锁就求，声音放软，说清后穴现在有多湿多重。");
   }
 
   function sneaky() {
     bump({ lust: 4 });
     setRemaining(value => Math.min((game.seconds ?? 180) * 4, value + 600));
-    onDirective("主人，锐锐偷摸了一下……现在更硬更难受了，求主人重罚。");
+    direct("偷摸被抓住了？手拿开，把刚才偷摸的样子说清楚，再自己报罚。");
   }
 
   function dailyReport() {
@@ -164,19 +164,19 @@ export function PersonaGame({ personaId, game, onDirective, disabled }: Props) {
     const next = { ...stats, streak: stats.streak + 1, day, obedience: Math.min(999, stats.obedience + 4), lust: Math.min(999, stats.lust + 4) };
     setStats(next); saveStats(personaId, next);
     setFlash(`报到成功 · 连签 ${next.streak} 天`);
-    onDirective(task ? t(task.directive) : "今天先报到，把身体状态和规矩一条条报给主人听。");
+    direct(task ? t(task.directive) : "今天先报到，把身体状态和规矩一条条报给主人听。");
   }
 
   function dailyDone() {
     if (!task) return;
     bump({ obedience: task.obedience, lust: task.lust });
-    onDirective(t(task.directive));
+    direct(t(task.directive));
   }
 
   function dailyMiss() {
     if (!task) return;
     bump({ lust: 5 });
-    onDirective(t(task.mercy));
+    direct(t(task.mercy));
   }
 
   function restartTimer() {
@@ -184,6 +184,7 @@ export function PersonaGame({ personaId, game, onDirective, disabled }: Props) {
   }
 
   const busy = disabled;
+  const direct = (text: string) => /^(主人|呜|唔|是，主人|啊)/.test(text) ? onDirective("跪好，把这句话说给主人听：「" + text + "」") : onDirective(text);
   const Icon = game.kind === "dice" ? Dices : game.kind === "timer" ? Timer : game.kind === "lock" ? Lock : game.kind === "wheel" ? Sparkles : game.kind === "cards" ? Crown : game.kind === "daily" ? ScrollText : game.kind === "task" ? Trophy : game.kind === "chant" ? Flame : Heart;
   return <section className={`persona-game game-${game.kind}`}>
     <header className="pg-head">
@@ -225,7 +226,7 @@ export function PersonaGame({ personaId, game, onDirective, disabled }: Props) {
         <div className="pg-row">
           {!running ? <button className="pg-btn primary" disabled={busy} onClick={() => { if (remaining === 0) restartTimer(); else setRunning(true); }}><Play size={13}/>{remaining === 0 ? t(COPY.gameAgain) : t(game.action)}</button>
             : <button className="pg-btn ghost" disabled={busy} onClick={() => setRunning(false)}><Pause size={13}/>先停下</button>}
-          <button className="pg-btn ghost" disabled={busy || !running} onClick={() => { bump({ lust: 3 }); onDirective("顶到了最里面，锐锐叫出声了，主人再快一点。"); }}><Flame size={13}/>顶一下</button>
+          <button className="pg-btn ghost" disabled={busy || !running} onClick={() => { bump({ lust: 3 }); direct("再顶一下，叫大声点，主人还没过瘾。"); }}><Flame size={13}/>顶一下</button>
         </div>
       </div>}
       {game.kind === "wheel" && <div className="pg-wheel">
@@ -249,7 +250,7 @@ export function PersonaGame({ personaId, game, onDirective, disabled }: Props) {
           {!unlocked ? <><button className="pg-btn primary" disabled={busy || running} onClick={() => setRunning(true)}><Hourglass size={13}/>{t(game.action)}</button>
             <button className="pg-btn ghost" disabled={busy || !running} onClick={unlockBeg}><KeyRound size={13}/>求开锁</button>
             <button className="pg-btn ghost" disabled={busy || !running} onClick={sneaky}><Eye size={13}/>偷摸一下</button></>
-            : <button className="pg-btn primary" disabled={busy} onClick={() => { bump({ obedience: 6, lust: 10 }); onDirective("锁开了，锐锐扑上去求主人操，今晚要射到失禁才准停。"); setUnlocked(false); setRemaining(game.seconds ?? 180); }}><Heart size={13}/>扑上去求操</button>}
+            : <button className="pg-btn primary" disabled={busy} onClick={() => { bump({ obedience: 6, lust: 10 }); direct("锁开了，自己扑上来求操，今晚射到失禁才准停。"); setUnlocked(false); setRemaining(game.seconds ?? 180); }}><Heart size={13}/>扑上去求操</button>}
         </div>
       </div>}
       {game.kind === "cards" && <div className="pg-cards">
